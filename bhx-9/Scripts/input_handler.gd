@@ -7,7 +7,7 @@ var input_state: InputState
 var offset: Vector2
 
 @onready var main: Node2D = $".."
-@onready var mouse: Sprite2D = $"../Mouse"
+@onready var mouse: Node2D = $"../Mouse"
 
 @onready var twitter: WindowUI = %Twitter
 @onready var article: WindowUI = %Article

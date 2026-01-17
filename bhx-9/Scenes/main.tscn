@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="14_jkdf5"]
 [ext_resource type="Script" uid="uid://c5rgyewbeb3x7" path="res://Scripts/body.gd" id="15_wsu2k"]
 [ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="16_k12tt"]
+[ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -109,9 +110,13 @@ shadow_offset = Vector2(2, 2)
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("1_bo1nx")
 
-[node name="Mouse" type="Sprite2D" parent="."]
+[node name="Mouse" type="Node2D" parent="."]
 z_index = 2000
 position = Vector2(183, 112)
+
+[node name="Mouse" type="Sprite2D" parent="Mouse"]
+z_index = 2000
+position = Vector2(12, 20)
 texture = ExtResource("7_6bp64")
 
 [node name="Panel" type="PanelContainer" parent="."]
@@ -127,6 +132,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_8gbba")
 
 [node name="Twitter" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
+visible = false
 offset_left = 829.0
 offset_top = 40.0
 offset_right = 1237.0
@@ -147,6 +153,7 @@ layout_mode = 2
 
 [node name="Article" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
+visible = false
 offset_left = 456.0
 offset_top = 287.0
 offset_right = 1077.0
@@ -184,6 +191,7 @@ autowrap_mode = 2
 
 [node name="News" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
+visible = false
 offset_left = 113.0
 offset_top = 135.0
 offset_right = 619.0
@@ -453,6 +461,55 @@ theme_override_font_sizes/font_size = 30
 text = "| | |          INVESTIGATION          | | |"
 horizontal_alignment = 1
 
+[node name="Window" parent="." instance=ExtResource("1_jjgbg")]
+offset_left = 89.0
+offset_top = 46.0
+offset_right = 629.0
+offset_bottom = 757.0
+
+[node name="Title" parent="Window" index="1"]
+text = "News"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 19
+
+[node name="Panel" type="TextureRect" parent="Window/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("15_wsu2k")
+
+[node name="Label" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "La piste cyclable très controversée de l'ouest de Montréal sera réaménagée avec un tout nouveau look."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
+text = "La première version de la piste cyclable Côte-des-Neiges–NDG sur la rue Terrebonne a suscité une vive opposition."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
+theme_override_font_sizes/font_size = 10
+text = "LJN News · Publié le : 31 octobre 2023 à 4 h 00 HAE 
+Dernière mise à jour : 31 octobre 2023"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Bicyclettes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+
 [connection signal="click" from="Twitter" to="InputHandler" method="_on_twitter_click"]
 [connection signal="focus_entered" from="Twitter" to="InputHandler" method="_on_twitter_focus_entered"]
 [connection signal="gui_input" from="Twitter" to="InputHandler" method="_on_twitter_gui_input"]
@@ -475,3 +532,4 @@ horizontal_alignment = 1
 [editable path="Article"]
 [editable path="News"]
 [editable path="Mail"]
+[editable path="Window"]
