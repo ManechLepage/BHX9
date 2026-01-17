@@ -5,6 +5,9 @@ extends RichTextLabel
 @onready var input_handler: InputHandler = $"../../../../InputHandler"
 @onready var quacker_bicycle: WindowUI = $"../../../../Bicyclettes/QuackerBicycle"
 @onready var news: WindowUI = $"../../../../Bicyclettes/News"
+@onready var ljn_groenland: WindowUI = $"../../../../Groenland/LJNGroenland"
+@onready var quacker_groenland: WindowUI = $"../../../../Groenland/QuackerGroenland"
+@onready var tutube: WindowUI = $"../../../../Groenland/Tutube"
 
 
 func load_email() -> void:
@@ -20,6 +23,15 @@ func article_cycliste() -> void:
 func news_cycliste() -> void:
 	show_window(news)
 
+func article_groenland() -> void:
+	show_window(ljn_groenland)
+
+func quacker() -> void:
+	show_window(quacker_groenland)
+
+func tutubes() -> void:
+	show_window(tutube)
+
 func update(_value:Variant) -> void:
 	var value = str(_value)
 	if value == "twitter_cycliste":
@@ -28,6 +40,12 @@ func update(_value:Variant) -> void:
 		article_cycliste()
 	if value == "news_cycliste":
 		news_cycliste()
+	if value == "article_groenland":
+		article_groenland()
+	if value == "quacker_groenland":
+		quacker()
+	if value == "tutube":
+		tutubes()
 
 func show_window(window:WindowUI) -> void:
 	window.visible = true

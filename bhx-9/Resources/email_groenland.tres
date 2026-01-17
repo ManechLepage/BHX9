@@ -1,17 +1,19 @@
 [gd_resource type="Resource" script_class="Email" load_steps=3 format=3 uid="uid://cjxxugospdomd"]
 
-[ext_resource type="Texture2D" uid="uid://bxs2mykxvgx00" path="res://Visual/sprites/profiles/shindy.png" id="1_htbpe"]
+[ext_resource type="Texture2D" uid="uid://g0qqbmiewj4c" path="res://Visual/sprites/profiles/eric.png" id="1_htbpe"]
 [ext_resource type="Script" uid="uid://bio6x4jbhmjb1" path="res://Scripts/email_info.gd" id="2_v707t"]
 
 [resource]
 script = ExtResource("2_v707t")
-name = "Shindy O' Sawl"
-adress = "shinososo@jmail.com"
-title = "Cycliste vs Automobilistes"
-date = "Octobre 19, 2025"
+name = "Alexiole La Luciole"
+adress = "luciole.alexis@jmail.com"
+title = "Attaque du Groenland"
+date = "Janvier 17, 2026"
 profile_picture = ExtResource("1_htbpe")
-request_message = "Peux-tu lire l’article de LJN parlant de la piste cyclable de la rue Terrebonne, ainsi que l’interview du très célèbre M. Vélo et d’une petite discussion enflammée sur le sujet controversé sur Twitter.
-
-Consulte [color=blue][url=\"article_cycliste\"]l'article LJN[/url][/color], la discussion [color=blue][url=\"twitter_cycliste\"]quacker[/url][/color] et  [color=blue][url=\"news_cycliste\"]les nouvelles en direct[/url][/color]"
-response_message = Array[String](["Avec l'ajout des pistes cyclables, le traffic a ", " J'ai aussi découvert qu'il y a bel et bien ", "voies cyclables."])
+request_message = "Une nouvelle histoire se développe sur le Groenland! J'aimerais bien que tu me trouve les bonnes informations parce qu'il y a beaucoup d'information conflictuelle sur l'internet!!
+Voici quelques sources pour t'aider:
+- Discussion brûlante entre Trump et Frederiksen sur [color=blue][url=\"article_cycliste\"]quacker[/url][/color]
+- Article frais des [color=blue][url=\"twitter_cycliste\"]nouvelles[/url][/color] de ce matin
+- Vidéo [color=blue][url=\"news_cycliste\"]TuTube[/url][/color] d'un point de presse de Trump"
+response_message = Array[String](["", "", "", ""])
 metadata/_custom_type_script = "uid://bio6x4jbhmjb1"
