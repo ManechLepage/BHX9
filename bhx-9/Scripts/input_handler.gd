@@ -49,17 +49,17 @@ func focus_selected_window() -> void:
 	
 	selected_window.z_index = 3
 
-func _on_twitter_focus_entered() -> void:
-	twitter.z_index = 3
-	article.z_index = 1
-	news.z_index = 1
-
-func _on_news_focus_entered() -> void:
-	twitter.z_index = 1
-	article.z_index = 1
+func _on_news_click() -> void:
+	twitter.z_index -= 1
+	article.z_index -= 1
 	news.z_index = 3
 
-func _on_article_focus_entered() -> void:
-	twitter.z_index = 1
+func _on_article_click() -> void:
+	twitter.z_index -= 1
 	article.z_index = 3
-	news.z_index = 1
+	news.z_index -= 1
+
+func _on_twitter_click() -> void:
+	twitter.z_index = 3
+	article.z_index -= 1
+	news.z_index -= 1
