@@ -44,4 +44,5 @@ func receive_change(popup: PopupUI, word: String) -> void:
 	await tween.finished
 	popup.visible = false
 	response.text += word
+	investigation.answers.append(word)
 	next_step()

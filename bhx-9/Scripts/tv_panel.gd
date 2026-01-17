@@ -7,5 +7,5 @@ extends Panel
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	box.position.x -= scroll_speed
-	if box.position.x == -label.size.x:
+	if box.position.x <= -label.size.x:
 		box.position.x = 40

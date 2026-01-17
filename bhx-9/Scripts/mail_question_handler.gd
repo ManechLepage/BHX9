@@ -7,6 +7,7 @@ var down_pos: float = 1083
 @onready var down: Button = $Down
 var tween: Tween
 var ping_tween : Tween
+var answers: Array[String]
 
 @export var email: Email
 @onready var texture_rect: TextureRect = $ScrollContainer/Top/Panel/TextureRect
@@ -60,4 +61,9 @@ func ping(kill = false) -> void:
 		ping_tween.parallel().tween_property($Down/Sprite2D,"modulate",Color(1,1,1,0),2)
 		ping_tween.tween_property($Down/Sprite2D,"scale",Vector2.ZERO,0)
 		ping_tween.tween_property($Down/Sprite2D,"modulate",Color(Color.WHITE),0)
-		
+
+func _on_send_pressed() -> void:
+	var counter: int = 0
+	for i in range(3):
+		if answers[i] == email.answers[i]: counter += 1
+	
