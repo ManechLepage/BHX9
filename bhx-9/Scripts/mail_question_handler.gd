@@ -9,6 +9,7 @@ var tween: Tween
 
 @export var email: Email
 
+
 func _on_down_mouse_entered() -> void:
 	if tween and tween.is_running(): return
 	opened = true

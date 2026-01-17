@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cag7m04kyrg2u"]
+[gd_scene load_steps=24 format=3 uid="uid://cag7m04kyrg2u"]
 
 [ext_resource type="Texture2D" uid="uid://i0hcpaau77ti" path="res://Visual/sprites/investigation.png" id="1_cxio4"]
 [ext_resource type="Script" uid="uid://24njsyi3fshr" path="res://Scripts/mail_question_handler.gd" id="2_csxm7"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="8_vckge"]
 [ext_resource type="Script" uid="uid://c5rgyewbeb3x7" path="res://Scripts/body.gd" id="9_oiid6"]
 [ext_resource type="Script" uid="uid://dgpft72taljbh" path="res://Scripts/bottom_investigation.gd" id="10_uoko6"]
+[ext_resource type="Texture2D" uid="uid://bor1q31p2kkni" path="res://Visual/sprites/popup.png" id="11_csxm7"]
+[ext_resource type="Script" uid="uid://cf85k2k04kmhi" path="res://Scripts/popup.gd" id="12_kcuqx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1ilt"]
 texture = ExtResource("4_0t52g")
@@ -87,6 +89,18 @@ shadow_offset = Vector2(2, 2)
 font_size = 40
 font_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
 shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcuqx"]
+texture = ExtResource("11_csxm7")
+texture_margin_left = 64.0
+texture_margin_top = 4.0
+texture_margin_right = 27.0
+texture_margin_bottom = 20.0
+expand_margin_left = 2.0
+expand_margin_top = 5.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 96, 96)
 
 [node name="Investigation" type="NinePatchRect"]
 z_index = 20
@@ -210,6 +224,7 @@ offset_right = 961.0
 offset_bottom = 432.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(0.29586652, 0.2958665, 0.2958665, 1)
+theme_override_font_sizes/normal_font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_jkdf5")
 bbcode_enabled = true
 script = ExtResource("9_oiid6")
@@ -227,6 +242,7 @@ text = "Help!"
 label_settings = SubResource("LabelSettings_k12tt")
 
 [node name="Button" type="Button" parent="ScrollContainer/Top"]
+visible = false
 layout_mode = 0
 offset_left = 739.0
 offset_top = 440.0
@@ -276,6 +292,40 @@ offset_bottom = 28.0
 theme_override_font_sizes/font_size = 30
 text = "| | |          INVESTIGATION          | | |"
 horizontal_alignment = 1
+
+[node name="Popups" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 933.0
+mouse_filter = 2
+
+[node name="PopupVelo1" type="PanelContainer" parent="Popups"]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 523.0
+offset_right = 1147.0
+offset_bottom = 639.0
+pivot_offset = Vector2(70.575, 110.995)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_kcuqx")
+script = ExtResource("12_kcuqx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popups/PopupVelo1"]
+layout_mode = 2
+
+[node name="Augmenter" type="Button" parent="Popups/PopupVelo1/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
+theme_override_font_sizes/font_size = 40
+text = "Augmente"
+
+[node name="Diminuer" type="Button" parent="Popups/PopupVelo1/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
+theme_override_font_sizes/font_size = 40
+text = "Diminue"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
