@@ -1,7 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=3 format=3 uid="uid://dq1okjish7foe"]
 
+[ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 
 [node name="Main" type="Node2D"]
 
-[node name="PanelContainer" parent="." instance=ExtResource("1_jjgbg")]
+[node name="InputHandler" type="Node" parent="."]
+script = ExtResource("1_bo1nx")
+
+[node name="Windows" type="CanvasLayer" parent="."]
+
+[node name="Twitter" parent="Windows" instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+
+[node name="Youtube" parent="Windows" instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+offset_left = 422.0
+offset_top = 348.0
+offset_right = 641.0
+offset_bottom = 501.0
+
+[node name="News" parent="Windows" instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+offset_left = 739.0
+offset_top = 47.0
+offset_right = 958.0
+offset_bottom = 200.0
