@@ -87,6 +87,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_435c0")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="TextureRect"]
+
 [node name="Main" parent="." instance=ExtResource("2_y6ggm")]
-position = Vector2(960, 540)
-scale = Vector2(4, 4)
+position = Vector2(465, 98.99999)
+scale = Vector2(2.73, 2.33)

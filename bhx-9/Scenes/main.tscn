@@ -1,33 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=5 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
+texture = ExtResource("2_8gbba")
 
 [node name="Main" type="Node2D"]
 
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("1_bo1nx")
 
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 360.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8gbba")
+
 [node name="Twitter" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = -144.0
-offset_top = -79.0
-offset_right = -38.0
-offset_bottom = 20.0
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 126.0
+offset_bottom = 116.0
 
 [node name="News" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = -47.0
-offset_top = -12.0
-offset_right = 61.0
-offset_bottom = 88.0
+offset_left = 54.0
+offset_top = 136.0
+offset_right = 162.0
+offset_bottom = 236.0
 
 [node name="Youtube" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = 19.0
-offset_top = -82.0
-offset_right = 122.0
-offset_bottom = 12.0
+offset_left = 221.0
+offset_top = 7.0
+offset_right = 324.0
+offset_bottom = 101.0
 
 [connection signal="selected" from="Twitter" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="Twitter" to="InputHandler" method="unselect_window"]
