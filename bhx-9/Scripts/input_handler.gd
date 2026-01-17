@@ -9,9 +9,7 @@ var offset: Vector2
 @onready var main: Node2D = $".."
 @onready var mouse: Node2D = $"../Mouse"
 
-@onready var twitter: WindowUI = %Twitter
-@onready var article: WindowUI = %Article
-@onready var news: WindowUI = %News
+var active_windows: Array[WindowUI]
 
 enum InputState {
 	NONE,
@@ -20,7 +18,6 @@ enum InputState {
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
 
 @warning_ignore("unused_parameter")
 func _input(event: InputEvent) -> void:
@@ -44,23 +41,16 @@ func unselect_window() -> void:
 	selected_window = null
 
 func focus_selected_window() -> void:
-	twitter.z_index = 1
-	article.z_index = 1
-	news.z_index = 1
+	active_windows.erase(selected_window)
+	active_windows.append(selected_window)
 	
-	selected_window.z_index = 3
+	var index: int = 1
+	for window in active_windows:
+		window.z_index = index
+		index += 1
 
-func _on_news_click() -> void:
-	article.z_index -= 1
-	twitter.z_index -= 1
-	news.z_index = 3
-
-func _on_article_click() -> void:
-	twitter.z_index -= 1
-	article.z_index = 3
-	news.z_index -= 1
-
-func _on_twitter_click() -> void:
-	twitter.z_index = 3
-	article.z_index -= 1
-	news.z_index -= 1
+func add_window(window: WindowUI) -> void:
+	active_windows.append(window)
+	window.click.connect(focus_selected_window)
+	window.selected.connect(select_window)
+	window.unselect.connect(unselect_window)
