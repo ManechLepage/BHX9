@@ -9,6 +9,7 @@ var offset: Vector2
 @onready var main: Node2D = $".."
 @onready var mouse: Node2D = $"../Mouse"
 @onready var investigation: Investigation = $"../Investigation"
+@onready var mail_ui: WindowUI = $"../Mail"
 
 var active_windows: Array[WindowUI]
 
@@ -59,3 +60,10 @@ func add_window(window: WindowUI) -> void:
 func investigate_email(mail: Mail) -> void:
 	investigation.email = mail.email_info
 	investigation.load_email()
+	investigation.animate_up()
+	await get_tree().create_timer(0.2).timeout
+	var tween = create_tween()
+	tween.tween_property(mail_ui, "scale", Vector2.ZERO, 0.2).set_trans(Tween.TRANS_LINEAR)
+	await tween.finished
+	mail_ui.visible = false
+	mail_ui.scale = Vector2.ONE
