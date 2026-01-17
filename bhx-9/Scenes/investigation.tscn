@@ -379,10 +379,10 @@ text = "Diminué"
 [node name="PopupVelo2" type="PanelContainer" parent="Popups"]
 visible = false
 layout_mode = 0
-offset_left = 451.0
-offset_top = 541.0
-offset_right = 701.0
-offset_bottom = 660.0
+offset_left = 208.0
+offset_top = 584.0
+offset_right = 506.0
+offset_bottom = 703.0
 pivot_offset = Vector2(46.13, 118.86)
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_kcuqx")
@@ -417,6 +417,37 @@ theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
 theme_override_font_sizes/font_size = 40
 text = "      "
 
+[node name="PopupVelo3" type="PanelContainer" parent="Popups"]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 618.0
+offset_right = 347.0
+offset_bottom = 737.0
+pivot_offset = Vector2(46.13, 118.86)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_kcuqx")
+script = ExtResource("12_kcuqx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popups/PopupVelo3"]
+layout_mode = 2
+
+[node name="Augmenter" type="Button" parent="Popups/PopupVelo3/VBoxContainer"]
+modulate = Color(0.49464804, 0.73427325, 0.48122567, 1)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
+theme_override_font_sizes/font_size = 40
+text = "accord"
+
+[node name="Diminuer" type="Button" parent="Popups/PopupVelo3/VBoxContainer"]
+modulate = Color(0.76735914, 0.36882946, 0.31762317, 1)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
+theme_override_font_sizes/font_size = 40
+text = "Désaccord"
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Down" to="." method="_on_down_mouse_entered"]
@@ -426,3 +457,5 @@ text = "      "
 [connection signal="pressed" from="Popups/PopupVelo1/VBoxContainer/Diminuer" to="Popups/PopupVelo1" method="_on_diminuer_pressed"]
 [connection signal="value_changed" from="Popups/PopupVelo2/HBoxContainer/SpinBox" to="Popups/PopupVelo2" method="_on_spin_box_value_changed"]
 [connection signal="pressed" from="Popups/PopupVelo2/HBoxContainer/Confirm" to="Popups/PopupVelo2" method="_on_confirm_pressed"]
+[connection signal="pressed" from="Popups/PopupVelo3/VBoxContainer/Augmenter" to="Popups/PopupVelo3" method="_on_augmenter_pressed"]
+[connection signal="pressed" from="Popups/PopupVelo3/VBoxContainer/Diminuer" to="Popups/PopupVelo3" method="_on_diminuer_pressed"]
