@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bqbeud1bkmmpw"]
+[gd_scene load_steps=42 format=4 uid="uid://bqbeud1bkmmpw"]
 
 [ext_resource type="Texture2D" uid="uid://dqks581gx4bvy" path="res://3d Render/Model/PC_COMPLEMENTOS_baseColor.jpg" id="1_gjmww"]
 [ext_resource type="Shader" uid="uid://b64p3amnpkfmk" path="res://3d Render/shaders/CRT.gdshader" id="2_435c0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://plu6i0kkges2" path="res://3d Render/Model/PC_PRINCIPAL_metallicRoughness.png" id="5_4i6ln"]
 [ext_resource type="Texture2D" uid="uid://ik7wwm8ba0xo" path="res://3d Render/Model/PC_PRINCIPAL_normal.png" id="6_fkegs"]
 [ext_resource type="Texture2D" uid="uid://hc2hhxdqvcfl" path="res://3d Render/Model/PC_PRINCIPAL_baseColor..png" id="7_atw34"]
+[ext_resource type="Script" uid="uid://byyhkrfbjq16d" path="res://3d Render/3DLook.gd" id="8_hqsds"]
 [ext_resource type="Shader" uid="uid://cfcv37avc8h5u" path="res://3d Render/Post1.gdshader" id="10_435c0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gjmww"]
@@ -443,7 +444,10 @@ mesh = SubResource("ArrayMesh_2uq4h")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_88n2r")
 
-[node name="Screen" type="SubViewportContainer" parent="."]
+[node name="position" type="Marker3D" parent="Base/TextureRect/3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18288565, 0.23143485, -0.17521915)
+
+[node name="Screen" type="SubViewportContainer" parent="." node_paths=PackedStringArray("mouse3d", "camera")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -452,6 +456,9 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
+script = ExtResource("8_hqsds")
+mouse3d = NodePath("../Base/TextureRect/3D/position")
+camera = NodePath("../Base/TextureRect/3D/PC/Camera3D")
 
 [node name="SubViewport2" type="SubViewport" parent="Screen"]
 handle_input_locally = false
