@@ -3,6 +3,7 @@ extends RichTextLabel
 @onready var investigation: Investigation = $"../../.."
 @onready var ljn: WindowUI = $"../../../../Bicyclettes/LJN"
 @onready var input_handler: InputHandler = $"../../../../InputHandler"
+@onready var quacker_bicycle: WindowUI = $"../../../../Bicyclettes/QuackerBicycle"
 
 
 func _ready() -> void:
@@ -10,7 +11,7 @@ func _ready() -> void:
 	self.meta_clicked.connect(update)
 
 func twitter_cycliste() -> void:
-	pass
+	show_window(quacker_bicycle)
 
 func article_cycliste() -> void:
 	show_window(ljn)
