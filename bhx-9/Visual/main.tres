@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://85qyyovww5bb"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://85qyyovww5bb"]
 
 [ext_resource type="Texture2D" uid="uid://dwlmm8jucom6s" path="res://Visual/sprites/defaultsquaredisabled.png" id="1_1tyxu"]
 [ext_resource type="FontFile" uid="uid://bmkfgj54mw4qx" path="res://Visual/Jersey10-Regular.ttf" id="1_tiivk"]
@@ -67,6 +67,16 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 region_rect = Rect2(0, 0, 32, 32)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6i65"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color(0.7529412, 0.78039217, 0.78431374, 1)
+corner_detail = 1
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
 [resource]
 default_font = ExtResource("1_tiivk")
 default_font_size = 19
@@ -76,3 +86,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/normal = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/pressed = SubResource("StyleBoxTexture_isbx3")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_1tyxu")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_rcuxm")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_rcuxm")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_isbx3")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_y6i65")
