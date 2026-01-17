@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhkki3d0l5y6e"]
+[gd_scene load_steps=4 format=3 uid="uid://dhkki3d0l5y6e"]
 
 [ext_resource type="SpriteFrames" uid="uid://b3vna1d33wkpv" path="res://Visual/sprites/reporter/snow.tres" id="1_syhk1"]
 [ext_resource type="SpriteFrames" uid="uid://7v1wus3ef20j" path="res://Visual/sprites/reporter/reporter.tres" id="1_x1o7i"]
+[ext_resource type="AudioStream" uid="uid://dd88dffexyn8e" path="res://Visual/sprites/reporter/news talk.ogg" id="3_a8fqs"]
 
 [node name="Report" type="Node2D"]
 scale = Vector2(1, 0.76)
@@ -16,10 +17,17 @@ modulate = Color(1, 1, 1, 0.3647059)
 position = Vector2(59.749992, 42)
 scale = Vector2(0.24099998, 0.28)
 sprite_frames = ExtResource("1_syhk1")
-frame_progress = 0.5149969
+frame_progress = 0.51012564
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(58, 49)
 scale = Vector2(0.41925466, 0.41925466)
 sprite_frames = ExtResource("1_x1o7i")
-frame_progress = 0.14770249
+frame_progress = 0.017483758
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a8fqs")
+volume_db = 10.87
+pitch_scale = 0.55
+autoplay = true
+parameters/looping = true
