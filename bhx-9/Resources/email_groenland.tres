@@ -15,6 +15,7 @@ Voici quelques sources pour t'aider:
 - Discussion brûlante entre Trump et Frederiksen sur [color=blue][url=\"quacker_groenland\"]quacker[/url][/color]
 - Article frais des [color=blue][url=\"article_groenland\"]nouvelles[/url][/color] de ce matin
 - Vidéo [color=blue][url=\"tutube\"]TuTube[/url][/color] d'un point de presse de Trump"
-response_message = Array[String](["L'association des pays", " assure une certaine défence au Groenland. Cette association assure qu'il y a un nombre de pays proche de  ", " qui sont prêt à combattre. Les troupes du Danmark ", " arrivés au Groenland."])
-answers = Array[String](["OTAN", "31", "ne sont pas"])
+response_message = Array[String](["L'association des pays ", " assure une certaine défence au Groenland. Cette association assure qu'il y a un nombre de pays proche de  ", " qui sont prêt à combattre. Les troupes du Danmark ", " arrivés au Groenland."])
+popup_offset = 3
+answers = Array[String](["de l'OTAN", "31", "ne sont pas"])
 metadata/_custom_type_script = "uid://bio6x4jbhmjb1"
