@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="BHX9"
-run/main_scene="uid://dq1okjish7foe"
+run/main_scene="uid://bqbeud1bkmmpw"
 config/features=PackedStringArray("4.5", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [file_customization]
 

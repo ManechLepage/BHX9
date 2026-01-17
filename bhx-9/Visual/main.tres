@@ -1,8 +1,11 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://85qyyovww5bb"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://85qyyovww5bb"]
 
 [ext_resource type="Texture2D" uid="uid://dwlmm8jucom6s" path="res://Visual/sprites/defaultsquaredisabled.png" id="1_1tyxu"]
-[ext_resource type="FontFile" uid="uid://bmkfgj54mw4qx" path="res://Visual/Jersey10-Regular.ttf" id="1_tiivk"]
 [ext_resource type="Texture2D" uid="uid://dgg4gk2c0cfh8" path="res://Visual/sprites/tabsPatch.png" id="1_xrraj"]
+[ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="2_y6i65"]
+[ext_resource type="Texture2D" uid="uid://v57b4l6sxaky" path="res://Visual/sprites/defaultsquare.png" id="3_4kqaa"]
+[ext_resource type="Texture2D" uid="uid://d2tcuucodqktg" path="res://Visual/sprites/defaultsquarepressed.png" id="4_3h814"]
+[ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="6_y6i65"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmutd"]
 texture = ExtResource("1_1tyxu")
@@ -16,19 +19,62 @@ expand_margin_right = 1.0
 expand_margin_bottom = 1.0
 region_rect = Rect2(0, 0, 16, 16)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm0tm"]
+texture = ExtResource("2_y6i65")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcuxm"]
+texture = ExtResource("3_4kqaa")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isbx3"]
+texture = ExtResource("4_3h814")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 16, 16)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tyxu"]
 texture = ExtResource("1_xrraj")
-texture_margin_left = 10.161709
-texture_margin_top = 5.0
-texture_margin_right = 10.0
+texture_margin_left = 10.0
+texture_margin_top = 8.0
+texture_margin_right = 13.0
 texture_margin_bottom = 3.0
 expand_margin_left = 2.0
 expand_margin_top = 5.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6i65"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.8949228, 0.8949223, 0.8949224, 1)
+corner_detail = 1
 
 [resource]
-default_font = ExtResource("1_tiivk")
-default_font_size = 19
+default_font = ExtResource("6_y6i65")
+default_font_size = 20
 Button/styles/disabled = SubResource("StyleBoxTexture_vmutd")
+Button/styles/focus = SubResource("StyleBoxTexture_mm0tm")
+Button/styles/hover = SubResource("StyleBoxTexture_rcuxm")
+Button/styles/normal = SubResource("StyleBoxTexture_rcuxm")
+Button/styles/pressed = SubResource("StyleBoxTexture_isbx3")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_1tyxu")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_rcuxm")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_rcuxm")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_isbx3")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_y6i65")

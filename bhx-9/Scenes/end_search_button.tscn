@@ -1,0 +1,20 @@
+[gd_scene load_steps=0 format=3 uid="uid://b4o5gddbiyutw"]
+
+[node name="EndSearchButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1844.0
+offset_bottom = -1068.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.74620855, 0.26584002, 0.24309206, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 142.0
+offset_bottom = 19.0
+scale = Vector2(0.5, 0.5)
+text = "End research"
