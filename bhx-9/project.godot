@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="BHX9"
+run/main_scene="uid://dq1okjish7foe"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [file_customization]
