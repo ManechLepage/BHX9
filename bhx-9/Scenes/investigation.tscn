@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://cag7m04kyrg2u"]
+[gd_scene load_steps=25 format=3 uid="uid://cag7m04kyrg2u"]
 
 [ext_resource type="Texture2D" uid="uid://i0hcpaau77ti" path="res://Visual/sprites/investigation.png" id="1_cxio4"]
 [ext_resource type="Script" uid="uid://24njsyi3fshr" path="res://Scripts/mail_question_handler.gd" id="2_csxm7"]
 [ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="3_kcuqx"]
 [ext_resource type="Texture2D" uid="uid://e80b8kjgrck1" path="res://Visual/sprites/investigation_top.png" id="4_0t52g"]
 [ext_resource type="Texture2D" uid="uid://difal78unv801" path="res://Visual/sprites/darksquare.png" id="5_0nn6o"]
+[ext_resource type="Texture2D" uid="uid://bv3x3cdqff768" path="res://Visual/sprites/ring.png" id="5_0t52g"]
 [ext_resource type="Texture2D" uid="uid://bxs2mykxvgx00" path="res://Visual/sprites/profiles/shindy.png" id="6_wr3gm"]
 [ext_resource type="Texture2D" uid="uid://dwlmm8jucom6s" path="res://Visual/sprites/defaultsquaredisabled.png" id="7_di0oy"]
 [ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="8_vckge"]
@@ -168,7 +169,6 @@ email = ExtResource("3_kcuqx")
 
 [node name="Down" type="Button" parent="."]
 z_index = -1
-clip_contents = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -178,12 +178,18 @@ offset_top = -69.0
 offset_right = 147.0
 offset_bottom = 45.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.4700758, 0.47007585, 0.47007567, 1)
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_d1ilt")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_fdnlq")
 text = "\\\\CLOSE//
 ."
+
+[node name="Sprite2D" type="Sprite2D" parent="Down"]
+visible = false
+z_index = 1120
+position = Vector2(136, 40)
+texture = ExtResource("5_0t52g")
 
 [node name="ScrollContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
