@@ -8,6 +8,7 @@ var offset: Vector2
 
 @onready var main: Node2D = $".."
 @onready var mouse: Node2D = $"../Mouse"
+@onready var investigation: Investigation = $"../Investigation"
 
 var active_windows: Array[WindowUI]
 
@@ -54,3 +55,7 @@ func add_window(window: WindowUI) -> void:
 	window.click.connect(focus_selected_window)
 	window.selected.connect(select_window)
 	window.unselect.connect(unselect_window)
+
+func investigate_email(mail: Mail) -> void:
+	investigation.email = mail.email_info
+	investigation.load_email()

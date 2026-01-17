@@ -7,6 +7,7 @@ extends Button
 @onready var texture_rect: TextureRect = $HBoxContainer/TextureRect
 @onready var label: Label = $HBoxContainer/VBoxContainer/Label
 @onready var label_2: Label = $HBoxContainer/VBoxContainer/Label2
+@onready var input_handler: InputHandler = $"../../../../InputHandler"
 
 func _ready() -> void:
 	visible = false
@@ -18,4 +19,5 @@ func _ready() -> void:
 	label_2.text = email_info.title
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	disabled = true
+	input_handler.investigate_email(self)
