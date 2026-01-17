@@ -15,6 +15,7 @@ texture = ExtResource("2_8gbba")
 script = ExtResource("1_bo1nx")
 
 [node name="Panel" type="PanelContainer" parent="."]
+z_index = -10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -94,6 +95,39 @@ offset_left = 221.0
 offset_top = 7.0
 offset_right = 324.0
 offset_bottom = 101.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Article/ScrollContainer" index="0"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Article/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7176219, 0.1561712, 0.24115792, 1)
+text = "TITLE"
+
+[node name="Control" type="Control" parent="Article/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(90.725, 543.25)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Article/ScrollContainer/VBoxContainer/Control"]
+custom_minimum_size = Vector2(90.675, 0)
+layout_mode = 0
+offset_left = 1.9999999
+offset_top = -1.9999995
+offset_right = 356.71704
+offset_bottom = 2053.0
+scale = Vector2(0.265, 0.265)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Dans un monde où les interfaces numériques occupent une place grandissante, l’expérience utilisateur est devenue un enjeu central. Qu’on parle d’applications mobiles, de sites Web ou de plateformes immersives, le confort, la lisibilité et la fluidité d’utilisation sont désormais essentiels. Un utilisateur peut se satisfaire d’un design simple, mais abandonnera très vite une interface mal pensée, même si elle offre de nombreuses fonctionnalités. C’est pourquoi les développeurs et designers accordent une attention particulière à chaque détail.
+
+Un élément qui joue un rôle crucial dans l’appréciation d’une interface est la typographie. La taille des caractères, l’espacement des lignes, le choix de la police ou la mise en scène des paragraphes influencent directement la compréhension du texte. Une typographie bien équilibrée guide naturellement l’œil du lecteur et donne une impression de cohérence. À l’inverse, des polices trop petites, trop serrées ou excessivement décoratives compliquent la lecture et frustrent l’utilisateur.
+
+La gestion des couleurs constitue également un aspect fondamental de l’expérience visuelle. Une palette harmonieuse peut souligner l’identité d’un produit, transmettre une émotion ou encore faciliter l’interaction. On retrouve fréquemment des gammes sobres pour les interfaces professionnelles, tandis que les applications ludiques privilégient des tons plus vifs et contrastés. Néanmoins, au-delà de l’esthétique, les couleurs doivent aussi respecter des critères de lisibilité et d’accessibilité, notamment pour les personnes malvoyantes ou atteintes de daltonisme.
+
+Outre l’apparence visuelle, la fluidité des transitions et des interactions contribue à renforcer la qualité perçue d’une interface. De légères animations peuvent indiquer qu’une action est en cours, montrer la relation entre deux écrans ou attirer l’attention sur un bouton. Cependant, une utilisation excessive peut rapidement nuire à l’efficacité globale, alourdir le chargement ou distraire l’utilisateur de son objectif principal.
+
+Finalement, la réussite d’une interface repose sur un équilibre entre forme et fonction. Une interface exclusivement pratique risque de paraître trop froide ou technique, tandis qu’une interface trop visuelle peut se révéler inefficace. Les créateurs doivent donc comprendre les besoins réels des utilisateurs, anticiper leurs comportements et itérer constamment. Car une interface réussie n’est jamais figée : elle évolue avec le temps, s’adapte aux usages, aux technologies et aux exigences du public."
+autowrap_mode = 2
 
 [connection signal="selected" from="Twitter" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="Twitter" to="InputHandler" method="unselect_window"]
