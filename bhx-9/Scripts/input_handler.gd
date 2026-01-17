@@ -20,6 +20,7 @@ enum InputState {
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
 
 @warning_ignore("unused_parameter")
 func _input(event: InputEvent) -> void:

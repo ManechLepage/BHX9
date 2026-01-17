@@ -6,32 +6,24 @@
 gradient = SubResource("Gradient_hevlb")
 
 [node name="TwitterPost" type="Panel"]
-custom_minimum_size = Vector2(158, 60)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.5
-offset_right = -1762.0
-offset_bottom = -1021.5
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(330, 130)
+offset_right = 330.0
+offset_bottom = 130.0
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 4.0
-offset_right = 129.0
-offset_bottom = 22.0
-scale = Vector2(0.5, 0.5)
+offset_left = 35.0
+offset_top = 3.5
+offset_right = 143.0
+offset_bottom = 21.5
 text = "Name"
 
 [node name="Text" type="Label" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 14.0
-offset_right = 277.0
-offset_bottom = 102.0
-scale = Vector2(0.5, 0.5)
+offset_left = 33.0
+offset_top = 27.5
+offset_right = 307.0
+offset_bottom = 115.5
 theme_override_colors/font_color = Color(0.5890956, 0.5890956, 0.5890956, 1)
 text = "Ceci est le texte tres descriptif de twitter de quelqun probablement tres stupide"
 autowrap_mode = 2
@@ -40,7 +32,7 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 6.0
 offset_top = 3.0
-offset_right = 18.0
-offset_bottom = 15.0
+offset_right = 28.0
+offset_bottom = 23.5
 texture = SubResource("GradientTexture2D_5s0fa")
 expand_mode = 1

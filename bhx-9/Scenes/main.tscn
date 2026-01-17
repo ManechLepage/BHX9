@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=13 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -8,9 +8,17 @@
 [ext_resource type="PackedScene" path="res://Scenes/end_search_button.tscn" id="5_344ge"]
 [ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scripts/tv_panel.gd" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
+[ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="9_ynf5e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
+
+[sub_resource type="Gradient" id="Gradient_hptm8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d1ilt"]
+gradient = SubResource("Gradient_hptm8")
+width = 12
+height = 12
 
 [node name="Main" type="Node2D"]
 
@@ -27,8 +35,8 @@ z_index = -10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 360.0
-offset_bottom = 270.0
+offset_right = 1440.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8gbba")
@@ -38,10 +46,10 @@ z_index = 100
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 308.0
-offset_top = 13.0
-offset_right = 354.0
-offset_bottom = 29.0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 89.0
+offset_bottom = 51.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -51,18 +59,22 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = 275.0
-offset_top = 252.0
-offset_right = 350.1375
-offset_bottom = 264.32
+offset_left = 1206.0
+offset_top = 1006.0
+offset_right = 1328.0
+offset_bottom = 1047.0
 grow_vertical = 1
 
 [node name="Twitter" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = 20.0
-offset_top = 17.0
-offset_right = 190.0
-offset_bottom = 140.0
+offset_left = 829.0
+offset_top = 40.0
+offset_right = 1237.0
+offset_bottom = 366.0
+
+[node name="ScrollContainer" parent="Twitter" index="1"]
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Twitter/ScrollContainer" index="0"]
 layout_mode = 2
@@ -73,15 +85,45 @@ layout_mode = 2
 [node name="TwitterPost2" parent="Twitter/ScrollContainer/VBoxContainer" instance=ExtResource("4_jjvhh")]
 layout_mode = 2
 
+[node name="Article" parent="." instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+offset_left = 456.0
+offset_top = 287.0
+offset_right = 1077.0
+offset_bottom = 763.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Article/ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="Article/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7176219, 0.1561712, 0.24115792, 1)
+theme_override_font_sizes/font_size = 80
+text = "TITLE"
+
+[node name="Label" type="Label" parent="Article/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(90.675, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Dans un monde où les interfaces numériques occupent une place grandissante, l’expérience utilisateur est devenue un enjeu central. Qu’on parle d’applications mobiles, de sites Web ou de plateformes immersives, le confort, la lisibilité et la fluidité d’utilisation sont désormais essentiels. Un utilisateur peut se satisfaire d’un design simple, mais abandonnera très vite une interface mal pensée, même si elle offre de nombreuses fonctionnalités. C’est pourquoi les développeurs et designers accordent une attention particulière à chaque détail.
+
+Un élément qui joue un rôle crucial dans l’appréciation d’une interface est la typographie. La taille des caractères, l’espacement des lignes, le choix de la police ou la mise en scène des paragraphes influencent directement la compréhension du texte. Une typographie bien équilibrée guide naturellement l’œil du lecteur et donne une impression de cohérence. À l’inverse, des polices trop petites, trop serrées ou excessivement décoratives compliquent la lecture et frustrent l’utilisateur.
+
+La gestion des couleurs constitue également un aspect fondamental de l’expérience visuelle. Une palette harmonieuse peut souligner l’identité d’un produit, transmettre une émotion ou encore faciliter l’interaction. On retrouve fréquemment des gammes sobres pour les interfaces professionnelles, tandis que les applications ludiques privilégient des tons plus vifs et contrastés. Néanmoins, au-delà de l’esthétique, les couleurs doivent aussi respecter des critères de lisibilité et d’accessibilité, notamment pour les personnes malvoyantes ou atteintes de daltonisme.
+
+Outre l’apparence visuelle, la fluidité des transitions et des interactions contribue à renforcer la qualité perçue d’une interface. De légères animations peuvent indiquer qu’une action est en cours, montrer la relation entre deux écrans ou attirer l’attention sur un bouton. Cependant, une utilisation excessive peut rapidement nuire à l’efficacité globale, alourdir le chargement ou distraire l’utilisateur de son objectif principal.
+
+Finalement, la réussite d’une interface repose sur un équilibre entre forme et fonction. Une interface exclusivement pratique risque de paraître trop froide ou technique, tandis qu’une interface trop visuelle peut se révéler inefficace. Les créateurs doivent donc comprendre les besoins réels des utilisateurs, anticiper leurs comportements et itérer constamment. Car une interface réussie n’est jamais figée : elle évolue avec le temps, s’adapte aux usages, aux technologies et aux exigences du public."
+autowrap_mode = 2
+
 [node name="News" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
 offset_left = 113.0
 offset_top = 135.0
-offset_right = 276.0
-offset_bottom = 252.0
-
-[node name="ScrollContainer" parent="News" index="1"]
-visible = false
+offset_right = 619.0
+offset_bottom = 520.0
 
 [node name="Panel" type="Panel" parent="News"]
 clip_contents = true
@@ -121,52 +163,42 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Info tele tres importante "
 
-[node name="Article" parent="." instance=ExtResource("1_jjgbg")]
-unique_name_in_owner = true
-offset_left = 195.0
-offset_top = 46.0
-offset_right = 342.0
-offset_bottom = 184.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Article/ScrollContainer" index="0"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="Article/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.7176219, 0.1561712, 0.24115792, 1)
-text = "TITLE"
-
-[node name="Control" type="Control" parent="Article/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(90.725, 543.25)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Article/ScrollContainer/VBoxContainer/Control"]
-custom_minimum_size = Vector2(90.675, 0)
-layout_mode = 0
-offset_left = 1.9999999
-offset_top = -1.9999995
-offset_right = 500.11316
-offset_bottom = 2053.0
-scale = Vector2(0.265, 0.265)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Dans un monde où les interfaces numériques occupent une place grandissante, l’expérience utilisateur est devenue un enjeu central. Qu’on parle d’applications mobiles, de sites Web ou de plateformes immersives, le confort, la lisibilité et la fluidité d’utilisation sont désormais essentiels. Un utilisateur peut se satisfaire d’un design simple, mais abandonnera très vite une interface mal pensée, même si elle offre de nombreuses fonctionnalités. C’est pourquoi les développeurs et designers accordent une attention particulière à chaque détail.
-
-Un élément qui joue un rôle crucial dans l’appréciation d’une interface est la typographie. La taille des caractères, l’espacement des lignes, le choix de la police ou la mise en scène des paragraphes influencent directement la compréhension du texte. Une typographie bien équilibrée guide naturellement l’œil du lecteur et donne une impression de cohérence. À l’inverse, des polices trop petites, trop serrées ou excessivement décoratives compliquent la lecture et frustrent l’utilisateur.
-
-La gestion des couleurs constitue également un aspect fondamental de l’expérience visuelle. Une palette harmonieuse peut souligner l’identité d’un produit, transmettre une émotion ou encore faciliter l’interaction. On retrouve fréquemment des gammes sobres pour les interfaces professionnelles, tandis que les applications ludiques privilégient des tons plus vifs et contrastés. Néanmoins, au-delà de l’esthétique, les couleurs doivent aussi respecter des critères de lisibilité et d’accessibilité, notamment pour les personnes malvoyantes ou atteintes de daltonisme.
-
-Outre l’apparence visuelle, la fluidité des transitions et des interactions contribue à renforcer la qualité perçue d’une interface. De légères animations peuvent indiquer qu’une action est en cours, montrer la relation entre deux écrans ou attirer l’attention sur un bouton. Cependant, une utilisation excessive peut rapidement nuire à l’efficacité globale, alourdir le chargement ou distraire l’utilisateur de son objectif principal.
-
-Finalement, la réussite d’une interface repose sur un équilibre entre forme et fonction. Une interface exclusivement pratique risque de paraître trop froide ou technique, tandis qu’une interface trop visuelle peut se révéler inefficace. Les créateurs doivent donc comprendre les besoins réels des utilisateurs, anticiper leurs comportements et itérer constamment. Car une interface réussie n’est jamais figée : elle évolue avec le temps, s’adapte aux usages, aux technologies et aux exigences du public."
-autowrap_mode = 2
-
 [node name="Mail" parent="." instance=ExtResource("1_jjgbg")]
-offset_top = 178.0
-offset_right = 51.0
-offset_bottom = 270.0
+offset_left = 1.0
+offset_top = 662.0
+offset_right = 232.0
+offset_bottom = 1079.0
 
-[node name="Name" type="Label" parent="Mail"]
+[node name="Button" parent="Mail" index="0"]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer" index="0"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mail/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_d1ilt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+offset_right = 161.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("9_ynf5e")
+theme_override_font_sizes/font_size = 20
+text = "Marie Christie"
+
+[node name="Title" type="Label" parent="Mail"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = -1.0
@@ -185,11 +217,8 @@ text = "MAIL"
 [connection signal="focus_entered" from="News" to="InputHandler" method="_on_news_focus_entered"]
 [connection signal="selected" from="News" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="News" to="InputHandler" method="unselect_window"]
-[connection signal="click" from="Article" to="InputHandler" method="_on_article_click"]
-[connection signal="focus_entered" from="Article" to="InputHandler" method="_on_article_focus_entered"]
-[connection signal="selected" from="Article" to="InputHandler" method="select_window"]
-[connection signal="unselect" from="Article" to="InputHandler" method="unselect_window"]
 
 [editable path="Twitter"]
-[editable path="News"]
 [editable path="Article"]
+[editable path="News"]
+[editable path="Mail"]

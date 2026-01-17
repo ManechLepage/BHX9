@@ -361,10 +361,10 @@ size = Vector2i(1920, 1080)
 [node name="PC" type="Node3D" parent="Base/TextureRect/3D"]
 
 [node name="Camera3D" type="Camera3D" parent="Base/TextureRect/3D/PC"]
-transform = Transform3D(-4.2863267e-08, -0.19603172, 0.98059756, -8.568814e-09, 0.98059756, 0.19603172, -1, 1.7763568e-15, -4.3711374e-08, 1.1203663, 0.4967842, 0.010313258)
+transform = Transform3D(-4.3253973e-08, -0.14428711, 0.98953587, -6.306987e-09, 0.98953587, 0.14428711, -1, 1.7763568e-15, -4.3711374e-08, 1.1203663, 0.4967842, 0.010313258)
 environment = SubResource("Environment_mslbk")
 current = true
-fov = 22.2
+fov = 18.2
 size = 0.325
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Base/TextureRect/3D/PC"]
@@ -435,12 +435,12 @@ canvas_item_default_texture_filter = 0
 physics_object_picking = true
 physics_object_picking_sort = true
 size = Vector2i(1920, 1080)
-size_2d_override = Vector2i(360, 270)
+size_2d_override = Vector2i(1440, 1080)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="Screen/SubViewport2"]
-offset = Vector2(180, 135)
+anchor_mode = 0
 
 [node name="Main" parent="Screen/SubViewport2" instance=ExtResource("2_y6ggm")]
 
