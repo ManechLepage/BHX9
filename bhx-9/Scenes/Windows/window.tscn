@@ -22,8 +22,6 @@ offset_bottom = 4.0
 grow_horizontal = 2
 flat = true
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -36,9 +34,5 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VScrollBar" type="VScrollBar" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 3
-max_value = 3.0
-page = 1.0
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

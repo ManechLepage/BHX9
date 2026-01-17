@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=6 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="4_jjvhh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -26,8 +27,17 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_8gbba")
 unique_name_in_owner = true
 offset_left = 20.0
 offset_top = 17.0
-offset_right = 126.0
-offset_bottom = 116.0
+offset_right = 174.0
+offset_bottom = 119.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Twitter/ScrollContainer" index="0"]
+layout_mode = 2
+
+[node name="TwitterPost" parent="Twitter/ScrollContainer/VBoxContainer" instance=ExtResource("4_jjvhh")]
+layout_mode = 2
+
+[node name="TwitterPost2" parent="Twitter/ScrollContainer/VBoxContainer" instance=ExtResource("4_jjvhh")]
+layout_mode = 2
 
 [node name="News" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
@@ -35,6 +45,9 @@ offset_left = 54.0
 offset_top = 136.0
 offset_right = 162.0
 offset_bottom = 236.0
+
+[node name="ScrollContainer" parent="News" index="1"]
+visible = false
 
 [node name="Youtube" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
@@ -49,3 +62,6 @@ offset_bottom = 101.0
 [connection signal="unselect" from="News" to="InputHandler" method="unselect_window"]
 [connection signal="selected" from="Youtube" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="Youtube" to="InputHandler" method="unselect_window"]
+
+[editable path="Twitter"]
+[editable path="News"]
