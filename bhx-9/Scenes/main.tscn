@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=29 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scripts/tv_panel.gd" id="15_k12tt"]
 [ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
 [ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="16_k12tt"]
+[ext_resource type="Texture2D" uid="uid://ckol5lsk6f22w" path="res://Visual/sprites/sites/propagande.png" id="19_3pmx8"]
 [ext_resource type="PackedScene" uid="uid://b0yo0ruw5647o" path="res://Scenes/Windows/win_window.tscn" id="20_hibaj"]
 [ext_resource type="PackedScene" path="res://Scenes/tutorial.tscn" id="21_ee4r6"]
 [ext_resource type="Script" path="res://Scenes/tutorial.gd" id="22_gt3je"]
@@ -349,6 +350,7 @@ anchors_preset = 0
 mouse_filter = 1
 
 [node name="LJNGroenland" parent="Groenland" instance=ExtResource("1_jjgbg")]
+visible = false
 layout_mode = 0
 offset_left = 89.0
 offset_top = 46.0
@@ -373,14 +375,17 @@ texture = ExtResource("15_wsu2k")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Le président américain Donald Trump a intensifié jeudi les tensions autour de son projet d’acquérir le Groenland en menaçant d’imposer des droits de douane aux pays qui ne soutiendraient pas cette initiative, qu’il justifie par des « impératifs de sécurité nationale »."
+text = "Trump menace de droits de douane les pays qui ne soutiennent pas son plan"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="Groenland/LJNGroenland/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-text = "Lors d’une table ronde à la Maison‑Blanche, il a déclaré qu’il pourrait appliquer des taxes commerciales à des alliés européens si ceux‑ci ne « jouent pas le jeu » sur la question, en dépit du refus clair du Danemark, allié des États‑Unis au sein de l’OTAN, de discuter d’une cession du territoire arctique."
+text = "Le président américain Donald Trump a intensifié jeudi les tensions autour de son projet d’acquérir le Groenland en menaçant d’imposer des droits de douane aux pays qui ne soutiendraient pas cette initiative, qu’il justifie par des « impératifs de sécurité nationale ».
+
+
+Lors d’une table ronde à la Maison‑Blanche, il a déclaré qu’il pourrait appliquer des taxes commerciales à des alliés européens si ceux‑ci ne « jouent pas le jeu » sur la question, en dépit du refus clair du Danemark, allié des États‑Unis au sein de l’OTAN, de discuter d’une cession du territoire arctique."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -394,10 +399,10 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Groenland/LJNGroenland/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 200)
+custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("7_ynf5e")
+texture = ExtResource("19_3pmx8")
 expand_mode = 1
 
 [node name="Label4" type="Label" parent="Groenland/LJNGroenland/ScrollContainer/VBoxContainer"]
@@ -433,17 +438,82 @@ texture = ExtResource("8_ynf5e")
 [node name="TwitterPost" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
 layout_mode = 2
 
+[node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer/HBoxContainer" index="1"]
+text = "@Frederiksen"
+
 [node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer" index="1"]
 theme_override_font_sizes/font_size = 24
-text = "Attention tout le monde! Des cyclistes attaquent les pauvres conducteurs sur la rue Terrebonne par leurs comportements dangereux et non restreints. Ils veulent Ajouter une piste cyclable!!!! Ridicule????"
+text = " Le Groenland n’est pas à vendre. Le Danemark défendra sa souveraineté et le droit international face à toute pression extérieure.
+ #NousDéfendonsLeGroenland"
 
-[node name="TextureRect" type="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer" index="2"]
-custom_minimum_size = Vector2(700, 400)
+[node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer/HBoxContainer2" index="1"]
+text = "205k"
+
+[node name="Label2" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer/HBoxContainer2" index="3"]
+text = "10k"
+
+[node name="Label3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer/HBoxContainer2" index="5"]
+text = "21k"
+
+[node name="TwitterPost2" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("10_d1ilt")
-expand_mode = 1
+
+[node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer/HBoxContainer" index="1"]
+text = "@donaldTrump"
+
+[node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer" index="1"]
+theme_override_font_sizes/font_size = 24
+text = "«Le Groenland est stratégique. Si le Danemark continue de bloquer, les États‑Unis peuvent y arriver avec des navires, des avions et oui, des chars s’il le faut. Nous avons la puissance. Très rapidement. 
+ #ForceAméricaine "
+
+[node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer/HBoxContainer2" index="1"]
+text = "167k"
+
+[node name="Label2" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer/HBoxContainer2" index="3"]
+text = "3k"
+
+[node name="Label3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer/HBoxContainer2" index="5"]
+text = "8k"
+
+[node name="TwitterPost3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
+layout_mode = 2
+
+[node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3/VBoxContainer/HBoxContainer" index="1"]
+text = "@Frederiksen"
+
+[node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3/VBoxContainer" index="1"]
+theme_override_font_sizes/font_size = 24
+text = "Menacer un territoire pacifique avec des chars et des forces armées est irresponsable et contraire à tout principe international. 
+ #LeGroenlandEstSouverain "
+
+[node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3/VBoxContainer/HBoxContainer2" index="1"]
+text = "120k"
+
+[node name="Label2" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3/VBoxContainer/HBoxContainer2" index="3"]
+text = "1k"
+
+[node name="Label3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3/VBoxContainer/HBoxContainer2" index="5"]
+text = "5k"
+
+[node name="TwitterPost4" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
+layout_mode = 2
+
+[node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer" index="1"]
+text = "@DonaldTrump"
+
+[node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer" index="1"]
+theme_override_font_sizes/font_size = 24
+text = "Personne ne déploie des chars dans le froid mieux que nous. Neiges, glaces, montagnes — nos forces sont faites pour ça. Le Groenland sera sécurisé d’une façon ou d’une autre. 
+ #USAEnForce "
+
+[node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer2" index="1"]
+text = "113k"
+
+[node name="Label2" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer2" index="3"]
+text = "569"
+
+[node name="Label3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer2" index="5"]
+text = "1k"
 
 [node name="TextureRect" type="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -678,6 +748,9 @@ text = "Ok"
 [editable path="Groenland/LJNGroenland"]
 [editable path="Groenland/QuackerGroenland"]
 [editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost"]
+[editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2"]
+[editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3"]
+[editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4"]
 [editable path="Groenland/Tutube/ScrollContainer/Container/Report"]
 [editable path="Investigation"]
 [editable path="WinWindow"]

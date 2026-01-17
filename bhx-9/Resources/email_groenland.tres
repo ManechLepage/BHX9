@@ -12,8 +12,8 @@ date = "Janvier 17, 2026"
 profile_picture = ExtResource("1_htbpe")
 request_message = "Une nouvelle histoire se développe sur le Groenland! J'aimerais bien que tu me trouve les bonnes informations parce qu'il y a beaucoup d'information conflictuelle sur l'internet!!
 Voici quelques sources pour t'aider:
-- Discussion brûlante entre Trump et Frederiksen sur [color=blue][url=\"article_cycliste\"]quacker[/url][/color]
-- Article frais des [color=blue][url=\"twitter_cycliste\"]nouvelles[/url][/color] de ce matin
-- Vidéo [color=blue][url=\"news_cycliste\"]TuTube[/url][/color] d'un point de presse de Trump"
+- Discussion brûlante entre Trump et Frederiksen sur [color=blue][url=\"quacker_groenland\"]quacker[/url][/color]
+- Article frais des [color=blue][url=\"article_groenland\"]nouvelles[/url][/color] de ce matin
+- Vidéo [color=blue][url=\"tutube\"]TuTube[/url][/color] d'un point de presse de Trump"
 response_message = Array[String](["", "", "", ""])
 metadata/_custom_type_script = "uid://bio6x4jbhmjb1"
