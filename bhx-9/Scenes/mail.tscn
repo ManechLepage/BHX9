@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://nj7xc6qfgql3"]
+[gd_scene load_steps=5 format=3 uid="uid://nj7xc6qfgql3"]
 
 [ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="1_7wrfb"]
+[ext_resource type="Script" uid="uid://c3cl5vqdas6kk" path="res://Scripts/mail.gd" id="1_fxrxf"]
 
 [sub_resource type="Gradient" id="Gradient_hptm8"]
 
@@ -11,6 +12,7 @@ height = 32
 
 [node name="Mail" type="Button"]
 custom_minimum_size = Vector2(0, 80)
+script = ExtResource("1_fxrxf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -52,3 +54,5 @@ text = "J'e n'arrive pas a trouver"
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 3
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
