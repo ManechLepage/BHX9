@@ -1,7 +1,8 @@
 extends RichTextLabel
 
 @onready var investigation: Investigation = $"../../.."
-@onready var ljn: WindowUI = $"../../../../LJN"
+@onready var ljn: WindowUI = $"../../../../Bicyclettes/LJN"
+@onready var input_handler: InputHandler = $"../../../../InputHandler"
 
 
 func _ready() -> void:
@@ -12,7 +13,7 @@ func twitter_cycliste() -> void:
 	pass
 
 func article_cycliste() -> void:
-	ljn.visible = true
+	show_window(ljn)
 
 func news_cycliste() -> void:
 	pass
@@ -25,3 +26,10 @@ func update(_value:Variant) -> void:
 		article_cycliste()
 	if value == "news_cycliste":
 		news_cycliste()
+
+func show_window(window:WindowUI) -> void:
+	window.visible = true
+	window.scale = Vector2.ZERO
+	var tween = create_tween()
+	tween.tween_property(window, "scale", Vector2.ONE, 0.1).set_trans(Tween.TRANS_LINEAR)
+	input_handler.add_window(window)
