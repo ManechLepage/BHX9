@@ -425,6 +425,7 @@ offset_left = 190.0
 offset_top = 200.0
 offset_right = 961.0
 offset_bottom = 432.0
+mouse_filter = 1
 theme_override_colors/default_color = Color(0.29586652, 0.2958665, 0.2958665, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_jkdf5")
 bbcode_enabled = true
