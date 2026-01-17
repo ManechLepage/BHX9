@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
-[ext_resource type="PackedScene" path="res://Scenes/mail.tscn" id="5_k12tt"]
+[ext_resource type="PackedScene" uid="uid://nj7xc6qfgql3" path="res://Scenes/mail.tscn" id="5_k12tt"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cag7m04kyrg2u" path="res://Scenes/investigation.tscn" id="7_344ge"]
 [ext_resource type="Resource" uid="uid://4aw332qmsq8c" path="res://Resources/email_legault.tres" id="7_fevyy"]
@@ -27,7 +27,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c808srk8rneen" path="res://Visual/sprites/trump/trump.tres" id="22_1w6v2"]
 [ext_resource type="Script" uid="uid://c032ujguinjvj" path="res://Scenes/tutorial.gd" id="22_gt3je"]
 [ext_resource type="Texture2D" uid="uid://bor1q31p2kkni" path="res://Visual/sprites/popup.png" id="23_gt3je"]
-[ext_resource type="Script" uid="uid://dtq0odqehfe0k" path="res://Scenes/start.gd" id="28_ueoa1"]
+[ext_resource type="Script" path="res://Scenes/start.gd" id="28_ueoa1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -393,7 +393,7 @@ theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
 text = "Le président américain Donald Trump a intensifié jeudi les tensions autour de son projet d’acquérir le Groenland en menaçant d’imposer des droits de douane aux pays qui ne soutiendraient pas cette initiative, qu’il justifie par des « impératifs de sécurité nationale ».
 
 
-Lors d’une table ronde à la Maison‑Blanche, il a déclaré qu’il pourrait appliquer des taxes commerciales à des alliés européens si ceux‑ci ne « jouent pas le jeu » sur la question, en dépit du refus clair du Danemark, allié des États‑Unis au sein de l’OTAN, de discuter d’une cession du territoire arctique."
+Lors d’une table ronde à la Maison‑Blanche, il a déclaré qu’il pourrait appliquer des taxes commerciales à des alliés européens si ceux‑ci ne « jouent pas le jeu », en dépit du refus clair du Danemark, allié des États‑Unis au sein de l’OTAN, de discuter d’une cession du territoire arctique."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -477,7 +477,7 @@ text = "@donaldTrump"
 
 [node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer" index="1"]
 theme_override_font_sizes/font_size = 24
-text = "«Le Groenland est stratégique. Si le Danemark continue de bloquer, les États‑Unis peuvent y arriver avec des navires, des avions et oui, des chars s’il le faut. Nous avons la puissance. Très rapidement. 
+text = "«Le Groenland est stratégique. Si le Danemark continue de résister, les États‑Unis pourraient s'y rendre avec des navires, des avions et oui, des chars s’il le faut. Nous avons la puissance. Très rapidement. 
  #ForceAméricaine "
 
 [node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer/HBoxContainer2" index="1"]
@@ -523,7 +523,7 @@ text = "@DonaldTrump"
 
 [node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer" index="1"]
 theme_override_font_sizes/font_size = 24
-text = "Personne ne déploie des chars dans le froid mieux que nous. Neiges, glaces, montagnes — nos forces sont faites pour ça. Le Groenland sera sécurisé d’une façon ou d’une autre. 
+text = "Personne ne déploie des chars dans le froid mieux que nous. Neige, glace, montagnes — nos forces sont faites pour ça. Le Groenland sera sécurisé d’une façon ou d’une autre. 
  #USAEnForce "
 
 [node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer2" index="1"]
@@ -546,7 +546,7 @@ text = "@Frederiksen"
 
 [node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer" index="1"]
 theme_override_font_sizes/font_size = 24
-text = "Dans tous les cas nous avons déjà des troupes au Groenland, prêtent à ce combattre. Et tous les 31 pays de l'OTAN sont prêts à défendre.
+text = "Dans tous les cas, nous avons déjà des troupes au Groenland, prêtes à combattre. Et tous les 31 pays de l'OTAN sont prêts à défendre.
 #Ratio"
 
 [node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer/HBoxContainer2" index="1"]
@@ -627,7 +627,7 @@ theme_override_constants/separation = 40
 [node name="Label" type="Label" parent="Groenland/Tutube/ScrollContainer/Container2/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Trump menace le Groenlandde t, l'armée n'est pas encore là, mais tous les 27 pays du G7 sont prêts"
+text = "Trump menace le Groenland, l'armée n'est pas encore là, mais tous les 27 pays du G7 sont prêts"
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Groenland/Tutube/ScrollContainer/Container2/HBoxContainer"]
