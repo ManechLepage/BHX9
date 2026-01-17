@@ -1,9 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=32 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
-[ext_resource type="PackedScene" path="res://Scenes/mail.tscn" id="5_k12tt"]
+[ext_resource type="PackedScene" uid="uid://nj7xc6qfgql3" path="res://Scenes/mail.tscn" id="5_k12tt"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cag7m04kyrg2u" path="res://Scenes/investigation.tscn" id="7_344ge"]
 [ext_resource type="Resource" uid="uid://4aw332qmsq8c" path="res://Resources/email_legault.tres" id="7_fevyy"]
@@ -20,9 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
 [ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="16_k12tt"]
 [ext_resource type="Texture2D" uid="uid://ckol5lsk6f22w" path="res://Visual/sprites/sites/propagande.png" id="19_3pmx8"]
+[ext_resource type="Texture2D" uid="uid://cuuv0thab2rw3" path="res://Visual/sprites/profiles/extra.png" id="20_cbgmd"]
 [ext_resource type="PackedScene" uid="uid://b0yo0ruw5647o" path="res://Scenes/Windows/win_window.tscn" id="20_hibaj"]
-[ext_resource type="PackedScene" uid="uid://bbswlwcepn7p3" path="res://Scenes/tutorial.tscn" id="21_ee4r6"]
-[ext_resource type="Script" uid="uid://c032ujguinjvj" path="res://Scenes/tutorial.gd" id="22_gt3je"]
+[ext_resource type="Texture2D" uid="uid://cuqlc8ymtw5xb" path="res://Visual/sprites/profiles/donald.png" id="21_1w6v2"]
+[ext_resource type="PackedScene" path="res://Scenes/tutorial.tscn" id="21_ee4r6"]
+[ext_resource type="SpriteFrames" path="res://Visual/sprites/trump/trump.tres" id="22_1w6v2"]
+[ext_resource type="Script" path="res://Scenes/tutorial.gd" id="22_gt3je"]
 [ext_resource type="Texture2D" uid="uid://bor1q31p2kkni" path="res://Visual/sprites/popup.png" id="23_gt3je"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
@@ -409,12 +412,11 @@ expand_mode = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
 text = "
-Cette annonce survient alors qu’une délégation bipartisane du Congrès américain est à Copenhague pour rassurer le Danemark et le Groenland et que plusieurs pays européens ont annoncé le renforcement ou l’envoi de missions militaires de reconnaissance sur l’île en soutien à sa souveraineté."
+Cette annonce survient alors qu’une délégation bipartisane du Congrès américain est à Copenhague pour rassurer le Danemark et le Groenland et que plusieurs pays de l'OTAN ont annoncé le renforcement ou l’envoi de missions militaires de reconnaissance sur l’île en soutien à sa souveraineté. Cependant, le Groenland n'a pas encore acceuilli de soldats."
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="QuackerGroenland" parent="Groenland" instance=ExtResource("1_jjgbg")]
-visible = false
 layout_mode = 0
 offset_left = 89.0
 offset_top = 46.0
@@ -438,6 +440,9 @@ texture = ExtResource("8_ynf5e")
 [node name="TwitterPost" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
 layout_mode = 2
 
+[node name="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("20_cbgmd")
+
 [node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer/HBoxContainer" index="1"]
 text = "@Frederiksen"
 
@@ -457,6 +462,9 @@ text = "21k"
 
 [node name="TwitterPost2" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
 layout_mode = 2
+
+[node name="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("21_1w6v2")
 
 [node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2/VBoxContainer/HBoxContainer" index="1"]
 text = "@donaldTrump"
@@ -478,6 +486,9 @@ text = "8k"
 [node name="TwitterPost3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
 layout_mode = 2
 
+[node name="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("20_cbgmd")
+
 [node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3/VBoxContainer/HBoxContainer" index="1"]
 text = "@Frederiksen"
 
@@ -498,6 +509,9 @@ text = "5k"
 [node name="TwitterPost4" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
 layout_mode = 2
 
+[node name="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("21_1w6v2")
+
 [node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer" index="1"]
 text = "@DonaldTrump"
 
@@ -515,13 +529,35 @@ text = "569"
 [node name="Label3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4/VBoxContainer/HBoxContainer2" index="5"]
 text = "1k"
 
+[node name="TwitterPost5" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer/HBoxContainer" index="0"]
+texture = ExtResource("20_cbgmd")
+
+[node name="Name" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer/HBoxContainer" index="1"]
+text = "@Frederiksen"
+
+[node name="Text" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer" index="1"]
+theme_override_font_sizes/font_size = 24
+text = "Dans tous les cas nous avons déjà des troupes au Groenland, prêtent à ce combattre. Et tous les 31 pays de l'OTAN sont prêts à défendre.
+#Ratio"
+
+[node name="Label" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer/HBoxContainer2" index="1"]
+text = "105k"
+
+[node name="Label2" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer/HBoxContainer2" index="3"]
+text = "345"
+
+[node name="Label3" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5/VBoxContainer/HBoxContainer2" index="5"]
+text = "899"
+
 [node name="TextureRect" type="TextureRect" parent="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("11_6iyac")
 stretch_mode = 2
 
 [node name="Tutube" type="NinePatchRect" parent="Groenland"]
-visible = false
 layout_mode = 0
 offset_left = 697.0
 offset_top = 94.0
@@ -557,6 +593,15 @@ size_flags_vertical = 3
 [node name="Report" parent="Groenland/Tutube/ScrollContainer/Container" instance=ExtResource("14_h1bgf")]
 scale = Vector2(5.39, 5.645)
 
+[node name="AnimatedSprite2D2" parent="Groenland/Tutube/ScrollContainer/Container/Report" index="1"]
+visible = false
+
+[node name="AnimatedSprite2D" parent="Groenland/Tutube/ScrollContainer/Container/Report" index="2"]
+position = Vector2(59.92579, 34.89814)
+scale = Vector2(2.496908, 2.181134)
+sprite_frames = ExtResource("22_1w6v2")
+frame_progress = 0.0
+
 [node name="Container2" type="Panel" parent="Groenland/Tutube/ScrollContainer"]
 clip_contents = true
 layout_mode = 2
@@ -575,13 +620,13 @@ theme_override_constants/separation = 40
 [node name="Label" type="Label" parent="Groenland/Tutube/ScrollContainer/Container2/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
+text = "Trump menace le Groenlandde t, l'armée n'est pas encore là, mais tous les pays du G7  sont prêts"
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Groenland/Tutube/ScrollContainer/Container2/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
+text = "Trump menace le Groenlandde t, l'armée n'est pas encore là, mais certains pays de l'OTAN sont prêts"
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Groenland/Tutube"]
@@ -775,6 +820,7 @@ text = "Ok"
 [editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost2"]
 [editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost3"]
 [editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost4"]
+[editable path="Groenland/QuackerGroenland/ScrollContainer/VBoxContainer/TwitterPost5"]
 [editable path="Groenland/Tutube/ScrollContainer/Container/Report"]
 [editable path="Investigation"]
 [editable path="WinWindow"]
