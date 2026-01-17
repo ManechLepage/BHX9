@@ -37,10 +37,6 @@ texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
 region_rect = Rect2(0, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isbx3"]
@@ -49,10 +45,6 @@ texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
 region_rect = Rect2(0, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tyxu"]
@@ -68,14 +60,10 @@ expand_margin_bottom = 2.0
 region_rect = Rect2(0, 0, 32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6i65"]
-content_margin_left = 2.0
-content_margin_right = 2.0
-bg_color = Color(0.7529412, 0.78039217, 0.78431374, 1)
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.8949228, 0.8949223, 0.8949224, 1)
 corner_detail = 1
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
 
 [resource]
 default_font = ExtResource("1_tiivk")
