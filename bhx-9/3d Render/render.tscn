@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bqbeud1bkmmpw"]
+[gd_scene load_steps=41 format=4 uid="uid://bqbeud1bkmmpw"]
 
 [ext_resource type="Texture2D" uid="uid://dqks581gx4bvy" path="res://3d Render/Model/PC_COMPLEMENTOS_baseColor.jpg" id="1_gjmww"]
 [ext_resource type="Shader" uid="uid://b64p3amnpkfmk" path="res://3d Render/shaders/CRT.gdshader" id="2_435c0"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ik7wwm8ba0xo" path="res://3d Render/Model/PC_PRINCIPAL_normal.png" id="6_fkegs"]
 [ext_resource type="Texture2D" uid="uid://hc2hhxdqvcfl" path="res://3d Render/Model/PC_PRINCIPAL_baseColor..png" id="7_atw34"]
 [ext_resource type="Script" uid="uid://byyhkrfbjq16d" path="res://3d Render/3DLook.gd" id="8_hqsds"]
-[ext_resource type="Shader" uid="uid://cfcv37avc8h5u" path="res://3d Render/Post1.gdshader" id="10_435c0"]
 [ext_resource type="Script" uid="uid://lfhd2r5d2f11" path="res://3d Render/black.gd" id="12_4i6ln"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gjmww"]
@@ -44,9 +43,9 @@ ssao_detail = 0.54
 ssao_sharpness = 1.0
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 2.66
+glow_intensity = 1.19
 glow_strength = 1.12
-glow_bloom = 1.0
+glow_bloom = 0.6
 adjustment_enabled = true
 adjustment_contrast = 1.41
 
@@ -262,7 +261,7 @@ load_path = "res://.godot/imported/PC_PRINCIPAL_metallicRoughness.png-89abbf5573
 resource_name = "PRINCIPAL"
 transparency = 1
 cull_mode = 2
-albedo_color = Color(1, 1, 1, 0.45882353)
+albedo_color = Color(1, 1, 1, 0.24313726)
 albedo_texture = ExtResource("7_atw34")
 metallic = 1.0
 metallic_texture = SubResource("CompressedTexture2D_uj1lq")
@@ -315,7 +314,7 @@ viewport_path = NodePath("Screen/SubViewport2")
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission_energy_multiplier = 0.37
+emission_energy_multiplier = 0.61
 emission_texture = SubResource("ViewportTexture_mslbk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsds"]
@@ -341,11 +340,6 @@ shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.375
 shader_parameter/vignette_opacity = 0.3190000151525
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4i6ln"]
-shader = ExtResource("10_435c0")
-shader_parameter/intensity = 1.0
-shader_parameter/threshold = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_435c0"]
 shader = ExtResource("2_435c0")
@@ -389,7 +383,6 @@ size = Vector2i(1920, 1080)
 [node name="Camera3D" type="Camera3D" parent="Base/TextureRect/3D/PC"]
 transform = Transform3D(-4.3253973e-08, -0.14428711, 0.98953587, -6.306987e-09, 0.98953587, 0.14428711, -1, 1.7763568e-15, -4.3711374e-08, 1.1203663, 0.4967842, 0.010313258)
 environment = SubResource("Environment_mslbk")
-current = true
 fov = 18.2
 size = 0.325
 
@@ -487,20 +480,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Post1" type="CanvasLayer" parent="."]
+[node name="ScreenPostP" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Post1"]
-material = SubResource("ShaderMaterial_4i6ln")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="ScreenPostP" type="CanvasLayer" parent="Post1"]
-
-[node name="CRT" type="ColorRect" parent="Post1/ScreenPostP"]
+[node name="CRT" type="ColorRect" parent="ScreenPostP"]
 material = SubResource("ShaderMaterial_435c0")
 anchors_preset = 15
 anchor_right = 1.0
@@ -509,9 +491,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="black" type="CanvasLayer" parent="Post1/ScreenPostP"]
+[node name="black" type="CanvasLayer" parent="ScreenPostP"]
 
-[node name="ColorRect" type="ColorRect" parent="Post1/ScreenPostP/black"]
+[node name="ColorRect" type="ColorRect" parent="ScreenPostP/black"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

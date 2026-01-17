@@ -10,13 +10,16 @@ func email_done():
 	
 func invest_done():
 	if stage == 1:
+		
 		stage = max(stage,2)
 		$Tuto2Invest.hide()	
 		$Tuto2Invest2.show()
+		await get_tree().create_timer(0.1).timeout
+		$"../Investigation".frozen = true
 
 func invest2_done():
 	if stage == 2:
-		$"../Investigation".frozen = true
+		
 		stage = max(stage, 3)
 		$Tuto2Invest2.hide()
 		$"../Investigation/ScrollContainer/Top/Button".z_index = 0
