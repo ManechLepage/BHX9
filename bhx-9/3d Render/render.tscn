@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=4 uid="uid://bqbeud1bkmmpw"]
+[gd_scene load_steps=38 format=4 uid="uid://bqbeud1bkmmpw"]
 
 [ext_resource type="Texture2D" uid="uid://dqks581gx4bvy" path="res://3d Render/Model/PC_COMPLEMENTOS_baseColor.jpg" id="1_gjmww"]
+[ext_resource type="Shader" uid="uid://b64p3amnpkfmk" path="res://3d Render/shaders/CRT.gdshader" id="2_435c0"]
 [ext_resource type="Texture2D" uid="uid://kn7pnykuusyg" path="res://3d Render/Model/PC_COMPLEMENTOS_metallicRoughness.png" id="2_mslbk"]
 [ext_resource type="PackedScene" uid="uid://dq1okjish7foe" path="res://Scenes/main.tscn" id="2_y6ggm"]
 [ext_resource type="Texture2D" uid="uid://cef64m6xbunxh" path="res://3d Render/Model/PC_COMPLEMENTOS_normal.png" id="3_435c0"]
@@ -9,22 +10,32 @@
 [ext_resource type="Texture2D" uid="uid://ik7wwm8ba0xo" path="res://3d Render/Model/PC_PRINCIPAL_normal.png" id="6_fkegs"]
 [ext_resource type="Texture2D" uid="uid://hc2hhxdqvcfl" path="res://3d Render/Model/PC_PRINCIPAL_baseColor..png" id="7_atw34"]
 
-[sub_resource type="Curve" id="Curve_hpmnu"]
-_data = [Vector2(0, 0), 0.0, 0.3328637, 0, 1, Vector2(0.56877893, 0.18932587), 0.81004715, 0.81004715, 0, 0, Vector2(1, 0.7553371), 1.3125778, 0.0, 1, 0]
-point_count = 3
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsds"]
+shader = ExtResource("2_435c0")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(360, 270)
+shader_parameter/brightness = 1.4
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.14000000665
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 3.6810001748475
+shader_parameter/roll_variation = 1.21000005421512
+shader_parameter/distort_intensity = 0.010000000475
+shader_parameter/aberration = 0.006000047784999962
+shader_parameter/noise_opacity = 0.1200000057
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0570000027075
+shader_parameter/pixelate = false
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.375
+shader_parameter/vignette_opacity = 0.3190000151525
 
-[sub_resource type="Curve" id="Curve_y6ggm"]
-_data = [Vector2(0, 0), 0.0, 0.43455538, 0, 1, Vector2(0.55332303, 0.24044949), 0.83835626, 0.83835626, 0, 0, Vector2(1, 0.79185396), 1.2344592, 0.0, 1, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_sxdsx"]
-_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_i17mb"]
-curve_x = SubResource("Curve_hpmnu")
-curve_y = SubResource("Curve_y6ggm")
-curve_z = SubResource("Curve_sxdsx")
+[sub_resource type="ViewportTexture" id="ViewportTexture_gjmww"]
+viewport_path = NodePath("Base/TextureRect/3D")
 
 [sub_resource type="Gradient" id="Gradient_qogyu"]
 offsets = PackedFloat32Array(0.23140496, 0.6)
@@ -52,8 +63,8 @@ glow_enabled = true
 glow_normalized = true
 glow_strength = 1.73
 glow_bloom = 0.5
-adjustment_contrast = 1.43
-adjustment_color_correction = SubResource("CurveXYZTexture_i17mb")
+adjustment_enabled = true
+adjustment_contrast = 1.41
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_008br"]
 resource_name = "COMPLEMENTOS"
@@ -267,6 +278,7 @@ load_path = "res://.godot/imported/PC_PRINCIPAL_metallicRoughness.png-89abbf5573
 resource_name = "PRINCIPAL"
 transparency = 1
 cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.45882353)
 albedo_texture = ExtResource("7_atw34")
 metallic = 1.0
 metallic_texture = SubResource("CompressedTexture2D_uj1lq")
@@ -312,77 +324,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_uyg5o")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4bjiw"]
-viewport_path = NodePath("SubViewportContainer/SubViewport2")
+[sub_resource type="ViewportTexture" id="ViewportTexture_mslbk"]
+viewport_path = NodePath("Screen/SubViewport2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88n2r"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_4bjiw")
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission_energy_multiplier = 0.37
+emission_texture = SubResource("ViewportTexture_mslbk")
 
 [node name="Render" type="Node2D"]
 
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="Camera3D" type="Camera3D" parent="Node3D"]
-transform = Transform3D(-4.131399e-08, -0.3266241, 0.9451543, -1.4277185e-08, 0.9451543, 0.3266241, -1, 1.7763568e-15, -4.3711367e-08, 1.1369742, 0.6370689, 0.010313258)
-environment = SubResource("Environment_mslbk")
-projection = 1
-current = true
-fov = 41.8
-size = 0.39
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6143297, 0.66541886, 0)
-light_color = Color(1, 0.88266665, 0.68, 1)
-light_energy = 0.172
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
-environment = SubResource("Environment_mslbk")
-
-[node name="PC2" type="Node3D" parent="Node3D"]
-
-[node name="Sketchfab_model_001" type="Node3D" parent="Node3D/PC2"]
-transform = Transform3D(0.21036614, 0, 0, 0, -7.523281e-08, 0.21036617, 0, -0.21036617, -7.523281e-08, 0, 0, 0)
-
-[node name="Collada visual scene group_001" type="Node3D" parent="Node3D/PC2/Sketchfab_model_001"]
-transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, -0.99999994, 0, 0.99999994, -3.5762787e-07, 0, 0, 0)
-
-[node name="CD" type="Node3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001"]
-
-[node name="defaultMaterial_002" type="MeshInstance3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001/CD"]
-mesh = SubResource("ArrayMesh_c7pfc")
-skeleton = NodePath("")
-
-[node name="HOJAS_001" type="Node3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001"]
-
-[node name="defaultMaterial" type="MeshInstance3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001/HOJAS_001"]
-mesh = SubResource("ArrayMesh_lvkdx")
-skeleton = NodePath("")
-
-[node name="NOTAS" type="Node3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001"]
-
-[node name="defaultMaterial_001" type="MeshInstance3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001/NOTAS"]
-mesh = SubResource("ArrayMesh_5ma1g")
-skeleton = NodePath("")
-
-[node name="PC" type="Node3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001"]
-
-[node name="defaultMaterial_003" type="MeshInstance3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001/PC"]
-mesh = SubResource("ArrayMesh_jmbte")
-skeleton = NodePath("")
-
-[node name="defaultMaterial_004" type="MeshInstance3D" parent="Node3D/PC2/Sketchfab_model_001/Collada visual scene group_001/PC"]
-mesh = SubResource("ArrayMesh_8ycgf")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_p2j1u")
-
-[node name="Screen" type="MeshInstance3D" parent="Node3D/PC2"]
-transform = Transform3D(0.21036613, 0, 0, 0, 0.2103662, 0, 0, 0, 0.2103662, -0.0019948306, 0, 0)
-mesh = SubResource("ArrayMesh_2uq4h")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_88n2r")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="Screen" type="SubViewportContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -393,7 +347,7 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport2" type="SubViewport" parent="Screen"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 physics_object_picking = true
@@ -403,7 +357,92 @@ size_2d_override = Vector2i(360, 270)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport2"]
+[node name="Camera2D" type="Camera2D" parent="Screen/SubViewport2"]
 offset = Vector2(180, 135)
 
-[node name="Main" parent="SubViewportContainer/SubViewport2" instance=ExtResource("2_y6ggm")]
+[node name="Main" parent="Screen/SubViewport2" instance=ExtResource("2_y6ggm")]
+
+[node name="ScreenPostP" type="CanvasLayer" parent="Screen/SubViewport2"]
+
+[node name="CRT" type="ColorRect" parent="Screen/SubViewport2/ScreenPostP"]
+material = SubResource("ShaderMaterial_hqsds")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Base" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="TextureRect" type="TextureRect" parent="Base"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("ViewportTexture_gjmww")
+
+[node name="3D" type="SubViewport" parent="Base/TextureRect"]
+size = Vector2i(1920, 1080)
+
+[node name="PC" type="Node3D" parent="Base/TextureRect/3D"]
+
+[node name="Camera3D" type="Camera3D" parent="Base/TextureRect/3D/PC"]
+transform = Transform3D(-4.131399e-08, -0.3266241, 0.9451543, -1.4277185e-08, 0.9451543, 0.3266241, -1, 1.7763568e-15, -4.3711367e-08, 1.1369742, 0.6576814, 0.010313258)
+environment = SubResource("Environment_mslbk")
+projection = 1
+current = true
+fov = 41.8
+size = 0.325
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Base/TextureRect/3D/PC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6143297, 0.66541886, 0)
+light_color = Color(1, 0.88266665, 0.68, 1)
+light_energy = 0.067
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Base/TextureRect/3D/PC"]
+environment = SubResource("Environment_mslbk")
+
+[node name="PC2" type="Node3D" parent="Base/TextureRect/3D/PC"]
+
+[node name="Sketchfab_model_001" type="Node3D" parent="Base/TextureRect/3D/PC/PC2"]
+transform = Transform3D(0.21036614, 0, 0, 0, -7.523281e-08, 0.21036617, 0, -0.21036617, -7.523281e-08, 0, 0, 0)
+
+[node name="Collada visual scene group_001" type="Node3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001"]
+transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, -0.99999994, 0, 0.99999994, -3.5762787e-07, 0, 0, 0)
+
+[node name="CD" type="Node3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001"]
+
+[node name="defaultMaterial_002" type="MeshInstance3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001/CD"]
+mesh = SubResource("ArrayMesh_c7pfc")
+skeleton = NodePath("")
+
+[node name="HOJAS_001" type="Node3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001"]
+
+[node name="defaultMaterial" type="MeshInstance3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001/HOJAS_001"]
+mesh = SubResource("ArrayMesh_lvkdx")
+skeleton = NodePath("")
+
+[node name="NOTAS" type="Node3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001"]
+
+[node name="defaultMaterial_001" type="MeshInstance3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001/NOTAS"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15254486, 0)
+mesh = SubResource("ArrayMesh_5ma1g")
+skeleton = NodePath("")
+
+[node name="PC" type="Node3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001"]
+
+[node name="defaultMaterial_003" type="MeshInstance3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001/PC"]
+mesh = SubResource("ArrayMesh_jmbte")
+skeleton = NodePath("")
+
+[node name="defaultMaterial_004" type="MeshInstance3D" parent="Base/TextureRect/3D/PC/PC2/Sketchfab_model_001/Collada visual scene group_001/PC"]
+mesh = SubResource("ArrayMesh_8ycgf")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_p2j1u")
+
+[node name="Screen" type="MeshInstance3D" parent="Base/TextureRect/3D/PC/PC2"]
+transform = Transform3D(0.21036613, 0, 0, 0, 0.2103662, 0, 0, 0, 0.2103662, -0.0019948306, 0, 0)
+mesh = SubResource("ArrayMesh_2uq4h")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_88n2r")
+
+[node name="Post1" type="CanvasLayer" parent="."]
