@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=15 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cag7m04kyrg2u" path="res://Scenes/investigation.tscn" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://d3ssksdo6mpos" path="res://Visual/sprites/sites/LJNImage.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://rnmtr65yw1vc" path="res://Visual/sprites/sites/Quacker.png" id="8_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="9_hptm8"]
 [ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://dqajn1ul0lphc" path="res://Visual/sprites/sites/BicycleFake.png" id="10_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
@@ -216,61 +218,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("8_ynf5e")
 
-[node name="Label" type="Label" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer"]
+[node name="TwitterPost" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer" instance=ExtResource("9_hptm8")]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "La piste cyclable très controversée de l'ouest de Montréal sera réaménagée avec un tout nouveau look."
-horizontal_alignment = 1
-autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-text = "La première version de la piste cyclable Côte-des-Neiges–NDG sur la rue Terrebonne a suscité une vive opposition."
-horizontal_alignment = 1
-autowrap_mode = 2
+[node name="Text" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer" index="1"]
+theme_override_font_sizes/font_size = 24
+text = "Attention tout le monde! Des cyclistes attaquent les pauvres conducteurs sur la rue Terrebonne par leurs comportements dangereux et non restreints."
 
-[node name="Label3" type="Label" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-theme_override_font_sizes/font_size = 10
-text = "LJN News · Publié le : 31 octobre 2023 à 4 h 00 HAE 
-Dernière mise à jour : 31 octobre 2023"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 200)
+[node name="TextureRect" type="TextureRect" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer/TwitterPost/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(700, 400)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("7_ynf5e")
+size_flags_vertical = 0
+texture = ExtResource("10_d1ilt")
 expand_mode = 1
-
-[node name="Label5" type="Label" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-theme_override_font_sizes/font_size = 16
-text = "La première version de la piste cyclable Côte-des-Neiges–NDG sur la rue Terrebonne a suscité une vive opposition."
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label4" type="Label" parent="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
-text = "La rue Terrebonne est principalement résidentielle, bien que de nombreuses maisons et immeubles possèdent une allée ou un garage. On y trouve également des écoles et des églises. (John Ngala/CBC)
-
-Une piste cyclable controversée dans l'ouest de Montréal fera son retour l'an prochain après que sa première installation ait suscité une vive opposition de la part de la communauté, ce qui avait conduit le conseil d'arrondissement à y mettre fin.
-
-La rue Terrebonne sera rendue unidirectionnelle pour les véhicules et bidirectionnelle pour les cyclistes, avec des pistes cyclables des deux côtés de son axe est-ouest.
-
-Pour les véhicules, la rue Terrebonne sera à sens unique vers l'est entre le boulevard Cavendish et l'avenue Girouard. Elle sera à sens unique vers l'ouest entre le boulevard Cavendish et l'avenue Belmore.
-"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Investigation" parent="." instance=ExtResource("7_344ge")]
 
 [editable path="Mail"]
 [editable path="Bicyclettes/LJN"]
 [editable path="Bicyclettes/QuackerBicycle"]
+[editable path="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer/TwitterPost"]
