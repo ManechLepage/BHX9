@@ -77,4 +77,5 @@ func _on_send_pressed() -> void:
 	win_window.scale = Vector2.ZERO
 	
 	var tween2 = create_tween()
-	tween2.tween_property(win_window, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BOUNCE)
+	tween2.tween_property(win_window, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BACK)
+	tween2.chain().tween_property(win_window, "scale", Vector2.ONE, 0.2).set_trans(Tween.TRANS_CUBIC)
