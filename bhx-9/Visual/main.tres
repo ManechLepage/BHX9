@@ -1,7 +1,20 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://85qyyovww5bb"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://85qyyovww5bb"]
 
+[ext_resource type="Texture2D" uid="uid://dwlmm8jucom6s" path="res://Visual/sprites/defaultsquaredisabled.png" id="1_1tyxu"]
 [ext_resource type="FontFile" uid="uid://bmkfgj54mw4qx" path="res://Visual/Jersey10-Regular.ttf" id="1_tiivk"]
 [ext_resource type="Texture2D" uid="uid://dgg4gk2c0cfh8" path="res://Visual/sprites/tabsPatch.png" id="1_xrraj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmutd"]
+texture = ExtResource("1_1tyxu")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+region_rect = Rect2(0, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tyxu"]
 texture = ExtResource("1_xrraj")
@@ -17,4 +30,5 @@ expand_margin_bottom = 2.0
 [resource]
 default_font = ExtResource("1_tiivk")
 default_font_size = 19
+Button/styles/disabled = SubResource("StyleBoxTexture_vmutd")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_1tyxu")
