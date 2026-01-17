@@ -17,3 +17,6 @@ func _on_button_button_up() -> void:
 
 func _on_button_2_button_down() -> void:
 	click.emit()
+
+func change_score(value: String) -> void:
+	pass

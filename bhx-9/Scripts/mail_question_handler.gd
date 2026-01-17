@@ -9,13 +9,14 @@ var tween: Tween
 var ping_tween : Tween
 var answers: Array[String]
 
-@export var email: Email
+var email: Email
 @onready var texture_rect: TextureRect = $ScrollContainer/Top/Panel/TextureRect
 @onready var name_label: Label = $ScrollContainer/Top/Name
 @onready var email_label: Label = $ScrollContainer/Top/email
 @onready var date: Label = $ScrollContainer/Top/date
 @onready var header: Label = $ScrollContainer/Top/Header
 @onready var body: RichTextLabel = $ScrollContainer/Top/body
+@onready var win_window: WindowUI = $"../WinWindow"
 
 func load_email() -> void:
 	texture_rect.texture = email.profile_picture
@@ -66,4 +67,12 @@ func _on_send_pressed() -> void:
 	var counter: int = 0
 	for i in range(3):
 		if answers[i] == email.answers[i]: counter += 1
+	animate_down()
+	await get_tree().create_timer(0.4).timeout
+	
+	win_window.visible = true
+	win_window.scale = Vector2.ZERO
+	
+	var tween2 = create_tween()
+	tween2.tween_property(win_window, "scale", 1.0, 0.3).set_trans(Tween.TRANS_BOUNCE)
 	

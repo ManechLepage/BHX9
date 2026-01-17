@@ -320,7 +320,6 @@ flat = true
 [node name="Investigation" parent="." instance=ExtResource("7_344ge")]
 
 [node name="WinWindow" parent="." instance=ExtResource("20_hibaj")]
-visible = false
 offset_left = 391.0
 offset_top = 342.0
 offset_right = 1019.0
@@ -336,3 +335,4 @@ offset_bottom = 598.0
 [editable path="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer/TwitterPost"]
 [editable path="Bicyclettes/News/ScrollContainer/Container/Report"]
 [editable path="Investigation"]
+[editable path="WinWindow"]
