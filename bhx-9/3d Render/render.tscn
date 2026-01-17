@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqbeud1bkmmpw"]
+
+[ext_resource type="PackedScene" uid="uid://0uiatsjh48sc" path="res://3d Render/retro+computer+3d+model.fbx" id="1_hpmnu"]
+[ext_resource type="PackedScene" uid="uid://dq1okjish7foe" path="res://Scenes/main.tscn" id="2_y6ggm"]
+
+[sub_resource type="Curve" id="Curve_hpmnu"]
+_data = [Vector2(0, 0), 0.0, 0.3328637, 0, 1, Vector2(0.56877893, 0.18932587), 0.81004715, 0.81004715, 0, 0, Vector2(1, 0.7553371), 1.3125778, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_y6ggm"]
+_data = [Vector2(0, 0), 0.0, 0.43455538, 0, 1, Vector2(0.55332303, 0.24044949), 0.83835626, 0.83835626, 0, 0, Vector2(1, 0.79185396), 1.2344592, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_sxdsx"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_i17mb"]
+curve_x = SubResource("Curve_hpmnu")
+curve_y = SubResource("Curve_y6ggm")
+curve_z = SubResource("Curve_sxdsx")
+
+[sub_resource type="Gradient" id="Gradient_qogyu"]
+offsets = PackedFloat32Array(0.23140496, 0.6)
+colors = PackedColorArray(0, 0, 0, 1, 0.008400001, 0.020720005, 0.07, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tri0g"]
+gradient = SubResource("Gradient_qogyu")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yoh7b"]
+panorama = SubResource("GradientTexture2D_tri0g")
+
+[sub_resource type="Sky" id="Sky_gjmww"]
+sky_material = SubResource("PanoramaSkyMaterial_yoh7b")
+
+[sub_resource type="Environment" id="Environment_mslbk"]
+background_mode = 2
+sky = SubResource("Sky_gjmww")
+ambient_light_source = 2
+ambient_light_color = Color(0.2627451, 0.2627451, 0.5372549, 1)
+ambient_light_energy = 0.26
+reflected_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+glow_normalized = true
+glow_strength = 1.73
+glow_bloom = 0.5
+adjustment_contrast = 1.43
+adjustment_color_correction = SubResource("CurveXYZTexture_i17mb")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_435c0"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Render" type="Node2D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1920, 1080)
+
+[node name="Node3D" type="Node3D" parent="SubViewport"]
+
+[node name="retro+computer+3d+model" parent="SubViewport/Node3D" instance=ExtResource("1_hpmnu")]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D"]
+transform = Transform3D(-4.131399e-08, -0.3266241, 0.9451543, -1.4277185e-08, 0.9451543, 0.3266241, -1, 1.7763568e-15, -4.3711367e-08, 1.1369742, 0.41264647, 0.18014319)
+environment = SubResource("Environment_mslbk")
+projection = 1
+current = true
+fov = 41.8
+size = 0.62
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewport/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6143297, 0.66541886, 0)
+light_color = Color(1, 0.88266665, 0.68, 1)
+light_energy = 0.172
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport/Node3D"]
+environment = SubResource("Environment_mslbk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_435c0")
+
+[node name="Main" parent="." instance=ExtResource("2_y6ggm")]
+position = Vector2(960, 540)
+scale = Vector2(4, 4)
