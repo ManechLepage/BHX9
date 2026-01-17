@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=31 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="14_jkdf5"]
 [ext_resource type="Script" uid="uid://c5rgyewbeb3x7" path="res://Scripts/body.gd" id="15_wsu2k"]
 [ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="16_k12tt"]
-[ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="17_h1bgf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -462,27 +462,28 @@ theme_override_font_sizes/font_size = 30
 text = "| | |          INVESTIGATION          | | |"
 horizontal_alignment = 1
 
-[node name="Window" parent="." instance=ExtResource("1_jjgbg")]
+[node name="LJN" parent="." instance=ExtResource("1_jjgbg")]
+visible = false
 offset_left = 89.0
 offset_top = 46.0
 offset_right = 629.0
 offset_bottom = 757.0
 
-[node name="Title" parent="Window" index="1"]
+[node name="Title" parent="LJN" index="1"]
 text = "News"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/ScrollContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="LJN/ScrollContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 19
 
-[node name="Panel" type="TextureRect" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Panel" type="TextureRect" parent="LJN/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("15_wsu2k")
+texture = ExtResource("17_h1bgf")
 
-[node name="Label" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="LJN/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
@@ -490,14 +491,14 @@ text = "La piste cyclable très controversée de l'ouest de Montréal sera réam
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="LJN/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
 text = "La première version de la piste cyclable Côte-des-Neiges–NDG sur la rue Terrebonne a suscité une vive opposition."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="LJN/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
 theme_override_font_sizes/font_size = 10
@@ -533,4 +534,4 @@ mouse_filter = 1
 [editable path="Article"]
 [editable path="News"]
 [editable path="Mail"]
-[editable path="Window"]
+[editable path="LJN"]

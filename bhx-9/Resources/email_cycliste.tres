@@ -4,5 +4,7 @@
 
 [resource]
 script = ExtResource("1_rvc6w")
-request_message = "[url=\"twitter\"]Clickable text[/url]"
+request_message = "Peux-tu lire l’article de Radio-Canada parlant de la piste cyclable de la rue Terrebonne, ainsi que l’interview du très célèbre M. Vélo et d’une petite discussion enflammée sur le sujet controversé sur Twitter.
+
+Consulte [color=blue][url=\"article_cycliste\"]l'article LJN[/url][/color], la discussion [color=blue][url=\"twitter_cycliste\"]twitter[/url][/color] et l"
 metadata/_custom_type_script = "uid://bio6x4jbhmjb1"
