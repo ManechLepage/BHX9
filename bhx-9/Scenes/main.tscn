@@ -392,6 +392,7 @@ offset_left = 745.0
 offset_top = 442.0
 offset_right = 961.0
 offset_bottom = 489.0
+mouse_filter = 1
 theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
 theme_override_font_sizes/font_size = 40
 text = "Reply"
