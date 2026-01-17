@@ -36,3 +36,12 @@ func next_step() -> void:
 	popup.scale = Vector2.ZERO
 	popup.visible = true
 	tween.tween_property(popup, "scale", Vector2.ONE, 0.1).set_trans(Tween.TRANS_LINEAR)
+	popup.response_word.connect(receive_change)
+
+func receive_change(popup: PopupUI, word: String) -> void:
+	var tween = create_tween()
+	tween.tween_property(popup, "scale", Vector2.ZERO, 0.1).set_trans(Tween.TRANS_LINEAR)
+	await tween.finished
+	popup.visible = false
+	response.text += word
+	next_step()

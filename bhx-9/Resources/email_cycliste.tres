@@ -7,5 +7,5 @@ script = ExtResource("1_rvc6w")
 request_message = "Peux-tu lire l’article de LJN parlant de la piste cyclable de la rue Terrebonne, ainsi que l’interview du très célèbre M. Vélo et d’une petite discussion enflammée sur le sujet controversé sur Twitter.
 
 Consulte [color=blue][url=\"article_cycliste\"]l'article LJN[/url][/color], la discussion [color=blue][url=\"twitter_cycliste\"]quacker[/url][/color] et l"
-response_message = Array[String](["Après des recherches, j'ai trouvé que l'implémentation des pistes cyclables ", "le traffic. J'ai aussi découvert qu'il y a bel et bien ", "voies cyclables."])
+response_message = Array[String](["Avec l'ajout des pistes cyclables, le traffic a ", " J'ai aussi découvert qu'il y a bel et bien ", "voies cyclables."])
 metadata/_custom_type_script = "uid://bio6x4jbhmjb1"

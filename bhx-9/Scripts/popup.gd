@@ -4,7 +4,7 @@ extends PanelContainer
 signal response_word(word:String)
 
 func _on_augmenter_pressed() -> void:
-	response_word.emit(" augmente ")
+	response_word.emit(self, "augmenté.")
 
 func _on_diminuer_pressed() -> void:
-	response_word.emit(" diminue ")
+	response_word.emit(self, " diminué.")

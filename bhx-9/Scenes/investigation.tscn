@@ -303,9 +303,9 @@ mouse_filter = 2
 [node name="PopupVelo1" type="PanelContainer" parent="Popups"]
 visible = false
 layout_mode = 0
-offset_left = 853.0
+offset_left = 218.0
 offset_top = 506.0
-offset_right = 1146.0
+offset_right = 511.0
 offset_bottom = 625.0
 pivot_offset = Vector2(46.13, 118.86)
 mouse_filter = 1
@@ -321,7 +321,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
 theme_override_font_sizes/font_size = 40
-text = "Augmente"
+text = "Augmenté"
 
 [node name="Diminuer" type="Button" parent="Popups/PopupVelo1/VBoxContainer"]
 modulate = Color(0.76735914, 0.36882946, 0.31762317, 1)
@@ -329,7 +329,38 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
 theme_override_font_sizes/font_size = 40
-text = "Diminue"
+text = "Diminué"
+
+[node name="PopupVelo2" type="PanelContainer" parent="Popups"]
+visible = false
+layout_mode = 0
+offset_left = 853.0
+offset_top = 506.0
+offset_right = 1146.0
+offset_bottom = 625.0
+pivot_offset = Vector2(46.13, 118.86)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_kcuqx")
+script = ExtResource("12_kcuqx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popups/PopupVelo2"]
+layout_mode = 2
+
+[node name="Augmenter" type="Button" parent="Popups/PopupVelo2/VBoxContainer"]
+modulate = Color(0.49464804, 0.73427325, 0.48122567, 1)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
+theme_override_font_sizes/font_size = 40
+text = "Augmenté"
+
+[node name="Diminuer" type="Button" parent="Popups/PopupVelo2/VBoxContainer"]
+modulate = Color(0.76735914, 0.36882946, 0.31762317, 1)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
+theme_override_font_sizes/font_size = 40
+text = "Diminué"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
@@ -338,3 +369,5 @@ text = "Diminue"
 [connection signal="pressed" from="ScrollContainer/Top/Button" to="ScrollContainer/Bottom" method="_on_button_pressed"]
 [connection signal="pressed" from="Popups/PopupVelo1/VBoxContainer/Augmenter" to="Popups/PopupVelo1" method="_on_augmenter_pressed"]
 [connection signal="pressed" from="Popups/PopupVelo1/VBoxContainer/Diminuer" to="Popups/PopupVelo1" method="_on_diminuer_pressed"]
+[connection signal="pressed" from="Popups/PopupVelo2/VBoxContainer/Augmenter" to="Popups/PopupVelo2" method="_on_augmenter_pressed"]
+[connection signal="pressed" from="Popups/PopupVelo2/VBoxContainer/Diminuer" to="Popups/PopupVelo2" method="_on_diminuer_pressed"]
