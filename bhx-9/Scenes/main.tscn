@@ -8,39 +8,32 @@
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("1_bo1nx")
 
+[node name="Twitter" parent="." instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+offset_left = -391.0
+offset_top = -236.0
+offset_right = 13.0
+offset_bottom = 98.0
+
+[node name="News" parent="." instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+offset_left = -96.0
+offset_top = -49.0
+offset_right = 274.0
+offset_bottom = 227.0
+
+[node name="Youtube" parent="." instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+offset_left = 80.0
+offset_top = -237.0
+offset_right = 453.0
+offset_bottom = 103.0
+
 [node name="Windows" type="CanvasLayer" parent="."]
 
-[node name="Twitter" parent="Windows" instance=ExtResource("1_jjgbg")]
-unique_name_in_owner = true
-texture = null
-region_rect = Rect2(0, 0, 0, 0)
-patch_margin_left = 0
-patch_margin_top = 0
-patch_margin_right = 0
-patch_margin_bottom = 0
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.435, 2.435)
 
-[node name="Youtube" parent="Windows" instance=ExtResource("1_jjgbg")]
-unique_name_in_owner = true
-offset_left = 422.0
-offset_top = 348.0
-offset_right = 641.0
-offset_bottom = 501.0
-texture = null
-region_rect = Rect2(0, 0, 0, 0)
-patch_margin_left = 0
-patch_margin_top = 0
-patch_margin_right = 0
-patch_margin_bottom = 0
-
-[node name="News" parent="Windows" instance=ExtResource("1_jjgbg")]
-unique_name_in_owner = true
-offset_left = 739.0
-offset_top = 47.0
-offset_right = 958.0
-offset_bottom = 200.0
-texture = null
-region_rect = Rect2(0, 0, 0, 0)
-patch_margin_left = 0
-patch_margin_top = 0
-patch_margin_right = 0
-patch_margin_bottom = 0
+[connection signal="selected" from="Twitter" to="InputHandler" method="select_window"]
+[connection signal="selected" from="News" to="InputHandler" method="select_window"]
+[connection signal="selected" from="Youtube" to="InputHandler" method="select_window"]
