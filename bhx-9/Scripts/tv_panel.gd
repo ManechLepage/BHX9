@@ -7,4 +7,4 @@ extends Panel
 func _process(delta: float) -> void:
 	label.position.x -= scroll_speed
 	if label.position.x == -label.size.x:
-		label.position.x = 45
+		label.position.x = 40
