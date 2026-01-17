@@ -1,0 +1,2 @@
+class_name WindowUI
+extends NinePatchRect

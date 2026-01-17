@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://c0g3bp6kj72m"]
+[gd_scene load_steps=2 format=3 uid="uid://c0g3bp6kj72m"]
+
+[ext_resource type="Script" uid="uid://bfchd74urbuq1" path="res://Scripts/window.gd" id="1_g88ka"]
 
 [node name="Window" type="NinePatchRect"]
 offset_right = 219.0
 offset_bottom = 153.0
+script = ExtResource("1_g88ka")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
