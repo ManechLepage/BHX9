@@ -10,6 +10,7 @@ var ping_tween : Tween
 var answers: Array[String]
 
 var email: Email
+
 @onready var texture_rect: TextureRect = $ScrollContainer/Top/Panel/TextureRect
 @onready var name_label: Label = $ScrollContainer/Top/Name
 @onready var email_label: Label = $ScrollContainer/Top/email
@@ -18,6 +19,7 @@ var email: Email
 @onready var body: RichTextLabel = $ScrollContainer/Top/body
 @onready var win_window: WindowUI = $"../WinWindow"
 @onready var button: Button = $ScrollContainer/Top/Button
+@onready var bottom: Panel = $ScrollContainer/Bottom
 
 func load_email() -> void:
 	texture_rect.texture = email.profile_picture
@@ -65,6 +67,7 @@ func ping(kill = false) -> void:
 		ping_tween.tween_property($Down/Sprite2D,"modulate",Color(Color.WHITE),0)
 
 func _on_send_pressed() -> void:
+	if answers.size() != 3: return
 	var counter: int = 0
 	for i in range(3):
 		if answers[i] == email.answers[i]: counter += 1

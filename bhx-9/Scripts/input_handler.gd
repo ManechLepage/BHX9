@@ -80,3 +80,5 @@ func reset_emails() -> void:
 	investigation.email = null
 	investigation.button.disabled = false
 	investigation.body.text = ""
+	investigation.bottom.response.text = ""
+	investigation.bottom.current_index = 0
