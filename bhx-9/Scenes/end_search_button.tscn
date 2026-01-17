@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b4o5gddbiyutw"]
+[gd_scene load_steps=0 format=3 uid="uid://b4o5gddbiyutw"]
 
 [node name="EndSearchButton" type="Button"]
 anchors_preset = 15
