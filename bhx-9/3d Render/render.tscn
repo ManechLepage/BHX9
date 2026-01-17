@@ -10,30 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ik7wwm8ba0xo" path="res://3d Render/Model/PC_PRINCIPAL_normal.png" id="6_fkegs"]
 [ext_resource type="Texture2D" uid="uid://hc2hhxdqvcfl" path="res://3d Render/Model/PC_PRINCIPAL_baseColor..png" id="7_atw34"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsds"]
-shader = ExtResource("2_435c0")
-shader_parameter/overlay = false
-shader_parameter/resolution = Vector2(360, 270)
-shader_parameter/brightness = 1.4
-shader_parameter/scanlines_opacity = 0.0
-shader_parameter/scanlines_width = 0.0
-shader_parameter/grille_opacity = 0.14000000665
-shader_parameter/roll = true
-shader_parameter/roll_speed = 1.0
-shader_parameter/roll_size = 3.6810001748475
-shader_parameter/roll_variation = 1.21000005421512
-shader_parameter/distort_intensity = 0.010000000475
-shader_parameter/aberration = 0.006000047784999962
-shader_parameter/noise_opacity = 0.1200000057
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.0570000027075
-shader_parameter/pixelate = false
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.0
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.375
-shader_parameter/vignette_opacity = 0.3190000151525
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_gjmww"]
 viewport_path = NodePath("Base/TextureRect/3D")
 
@@ -334,43 +310,31 @@ emission_enabled = true
 emission_energy_multiplier = 0.37
 emission_texture = SubResource("ViewportTexture_mslbk")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsds"]
+shader = ExtResource("2_435c0")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(360, 270)
+shader_parameter/brightness = 1.4
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.14000000665
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 3.6810001748475
+shader_parameter/roll_variation = 1.21000005421512
+shader_parameter/distort_intensity = 0.010000000475
+shader_parameter/aberration = 0.006000047784999962
+shader_parameter/noise_opacity = 0.1200000057
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0570000027075
+shader_parameter/pixelate = false
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.375
+shader_parameter/vignette_opacity = 0.3190000151525
+
 [node name="Render" type="Node2D"]
-
-[node name="Screen" type="SubViewportContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport2" type="SubViewport" parent="Screen"]
-handle_input_locally = false
-canvas_item_default_texture_filter = 0
-physics_object_picking = true
-physics_object_picking_sort = true
-size = Vector2i(1920, 1080)
-size_2d_override = Vector2i(360, 270)
-size_2d_override_stretch = true
-render_target_update_mode = 4
-
-[node name="Camera2D" type="Camera2D" parent="Screen/SubViewport2"]
-offset = Vector2(180, 135)
-
-[node name="Main" parent="Screen/SubViewport2" instance=ExtResource("2_y6ggm")]
-
-[node name="ScreenPostP" type="CanvasLayer" parent="Screen/SubViewport2"]
-
-[node name="CRT" type="ColorRect" parent="Screen/SubViewport2/ScreenPostP"]
-material = SubResource("ShaderMaterial_hqsds")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Base" type="CanvasLayer" parent="."]
 layer = 0
@@ -444,5 +408,41 @@ transform = Transform3D(0.21036613, 0, 0, 0, 0.2103662, 0, 0, 0, 0.2103662, -0.0
 mesh = SubResource("ArrayMesh_2uq4h")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_88n2r")
+
+[node name="Screen" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport2" type="SubViewport" parent="Screen"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+physics_object_picking = true
+physics_object_picking_sort = true
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(360, 270)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Screen/SubViewport2"]
+offset = Vector2(180, 135)
+
+[node name="Main" parent="Screen/SubViewport2" instance=ExtResource("2_y6ggm")]
+
+[node name="ScreenPostP" type="CanvasLayer" parent="Screen/SubViewport2"]
+
+[node name="CRT" type="ColorRect" parent="Screen/SubViewport2/ScreenPostP"]
+material = SubResource("ShaderMaterial_hqsds")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Post1" type="CanvasLayer" parent="."]
