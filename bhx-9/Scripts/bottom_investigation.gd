@@ -29,7 +29,7 @@ func next_step() -> void:
 		filtered_string += added_string[i]
 	response.text = previous_text + added_string
 	current_index += 1
-	$"../..".frozen = false
+	if $"../../../Tuto".stage > 4: $"../..".frozen = false
 	if current_index == investigation.email.response_message.size(): return
 	
 	await get_tree().create_timer(0.2).timeout

@@ -178,13 +178,13 @@ theme_override_constants/separation = 40
 [node name="Label" type="Label" parent="Bicyclettes/News/ScrollContainer/Container2/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
+text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable. diminution du traffique!"
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Bicyclettes/News/ScrollContainer/Container2/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
+text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable. diminution du traffique!"
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Bicyclettes/News"]
@@ -747,6 +747,12 @@ offset_right = 335.0
 grow_horizontal = 2
 text = "| | |          INVESTIGATION En cours         | | |"
 
+[node name="sont" parent="Investigation/Popups/PopupGroenland3/VBoxContainer" index="0"]
+text = "sont au groenland"
+
+[node name="sontpas" parent="Investigation/Popups/PopupGroenland3/VBoxContainer" index="1"]
+text = "ne sont pas au groenland"
+
 [node name="WinWindow" parent="." instance=ExtResource("20_hibaj")]
 visible = false
 z_index = 25
@@ -780,6 +786,10 @@ z_index = 30
 offset_right = 1440.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.3254902)
+
+[node name="PanelContainer" parent="Tuto/Tuto2Invest2" index="0"]
+offset_top = 132.0
+offset_bottom = 356.0
 
 [node name="Label" parent="Tuto/Tuto2Invest2/PanelContainer/VBoxContainer" index="0"]
 text = "Lisez bien le message, puis pesez sur \"Répondre\"
