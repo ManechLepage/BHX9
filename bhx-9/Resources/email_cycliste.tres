@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Email" load_steps=2 format=3 uid="uid://cyxbktr0hqr1d"]
+
+[ext_resource type="Script" uid="uid://bio6x4jbhmjb1" path="res://Scripts/email_info.gd" id="1_rvc6w"]
+
+[resource]
+script = ExtResource("1_rvc6w")
+request_message = "[url=\"twitter\"]Clickable text[/url]"
+metadata/_custom_type_script = "uid://bio6x4jbhmjb1"

@@ -1,3 +1,4 @@
+class_name Investigation
 extends NinePatchRect
 
 var opened: bool = false
@@ -5,6 +6,8 @@ var up_pos: float = 150
 var down_pos: float = 1083
 @onready var down: Button = $Down
 var tween: Tween
+
+@export var email: Email
 
 func _on_down_mouse_entered() -> void:
 	if tween and tween.is_running(): return

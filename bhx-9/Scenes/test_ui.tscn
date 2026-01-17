@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://sqnqc01r0trb"]
+
+[ext_resource type="Script" uid="uid://drnsrfihfcx76" path="res://Scripts/test_ui.gd" id="1_a021g"]
+
+[node name="Control" type="RichTextLabel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1759.0
+offset_bottom = -1061.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[url=\"twitter\"]Clickable text[/url]"
+script = ExtResource("1_a021g")
