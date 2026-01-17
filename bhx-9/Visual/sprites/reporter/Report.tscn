@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhkki3d0l5y6e"]
+[gd_scene load_steps=5 format=3 uid="uid://dhkki3d0l5y6e"]
 
+[ext_resource type="Texture2D" uid="uid://d3ssksdo6mpos" path="res://Visual/sprites/sites/LJNImage.png" id="1_aq5mb"]
 [ext_resource type="SpriteFrames" uid="uid://b3vna1d33wkpv" path="res://Visual/sprites/reporter/snow.tres" id="1_syhk1"]
 [ext_resource type="SpriteFrames" uid="uid://7v1wus3ef20j" path="res://Visual/sprites/reporter/reporter.tres" id="1_x1o7i"]
 [ext_resource type="AudioStream" uid="uid://dd88dffexyn8e" path="res://Visual/sprites/reporter/news talk.ogg" id="3_a8fqs"]
@@ -7,13 +8,14 @@
 [node name="Report" type="Node2D"]
 scale = Vector2(1, 0.76)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 offset_right = 120.0
 offset_bottom = 84.0
-color = Color(0.08483999, 0.0702, 0.18, 1)
+texture = ExtResource("1_aq5mb")
+expand_mode = 1
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.3647059)
+modulate = Color(1, 1, 1, 0.58431375)
 position = Vector2(59.749992, 42)
 scale = Vector2(0.24099998, 0.28)
 sprite_frames = ExtResource("1_syhk1")
