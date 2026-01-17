@@ -459,6 +459,11 @@ theme_override_font_sizes/font_size = 30
 text = "| | |          INVESTIGATION          | | |"
 horizontal_alignment = 1
 
+[node name="Bicyclettes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+
 [node name="Window" parent="." instance=ExtResource("1_jjgbg")]
 offset_left = 89.0
 offset_top = 46.0
@@ -502,11 +507,6 @@ text = "LJN News · Publié le : 31 octobre 2023 à 4 h 00 HAE
 Dernière mise à jour : 31 octobre 2023"
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Bicyclettes" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-mouse_filter = 1
 
 [connection signal="click" from="Twitter" to="InputHandler" method="_on_twitter_click"]
 [connection signal="focus_entered" from="Twitter" to="InputHandler" method="_on_twitter_focus_entered"]
