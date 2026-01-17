@@ -13,5 +13,5 @@ profile_picture = ExtResource("1_xpt7h")
 request_message = "Peux-tu lire l’article de LJN parlant de la piste cyclable de la rue Terrebonne, ainsi que l’interview du très célèbre M. Vélo et d’une petite discussion enflammée sur le sujet controversé sur Twitter.
 
 Consulte [color=blue][url=\"article_cycliste\"]l'article LJN[/url][/color], la discussion [color=blue][url=\"twitter_cycliste\"]quacker[/url][/color] et  [color=blue][url=\"news_cycliste\"]les nouvelles en direct[/url][/color]"
-response_message = Array[String](["Avec l'ajout des pistes cyclables, le traffic a ", " J'ai aussi découvert qu'il y a bel et bien ", "voies cyclables."])
+response_message = Array[String](["Avec l'ajout des pistes cyclables, le traffic a ", " J'ai aussi découvert que le nombre de pistes cyclables est bel et bien de ", ". En général le public semble ", "l'ajout des pistes cyclables."])
 metadata/_custom_type_script = "uid://bio6x4jbhmjb1"
