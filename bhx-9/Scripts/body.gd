@@ -7,7 +7,7 @@ extends RichTextLabel
 @onready var news: WindowUI = $"../../../../Bicyclettes/News"
 
 
-func _ready() -> void:
+func load_email() -> void:
 	text = investigation.email.request_message
 	self.meta_clicked.connect(update)
 

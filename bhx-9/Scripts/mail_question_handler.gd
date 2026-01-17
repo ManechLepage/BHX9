@@ -8,7 +8,20 @@ var down_pos: float = 1083
 var tween: Tween
 
 @export var email: Email
+@onready var texture_rect: TextureRect = $ScrollContainer/Top/Panel/TextureRect
+@onready var name_label: Label = $ScrollContainer/Top/Name
+@onready var email_label: Label = $ScrollContainer/Top/email
+@onready var date: Label = $ScrollContainer/Top/date
+@onready var header: Label = $ScrollContainer/Top/Header
+@onready var body: RichTextLabel = $ScrollContainer/Top/body
 
+func load_email() -> void:
+	texture_rect.texture = email.profile_picture
+	name_label.text = email.name
+	email_label.text = email.adress
+	date.text = email.date
+	header.text = email.title
+	body.load_email()
 
 func _on_down_mouse_entered() -> void:
 	if tween and tween.is_running(): return

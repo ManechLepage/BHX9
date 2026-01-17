@@ -1,14 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=20 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://nj7xc6qfgql3" path="res://Scenes/mail.tscn" id="5_k12tt"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cag7m04kyrg2u" path="res://Scenes/investigation.tscn" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://d3ssksdo6mpos" path="res://Visual/sprites/sites/LJNImage.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://rnmtr65yw1vc" path="res://Visual/sprites/sites/Quacker.png" id="8_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="9_hptm8"]
-[ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="9_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://dqajn1ul0lphc" path="res://Visual/sprites/sites/BicycleFake.png" id="10_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://sv2m015x6l14" path="res://Visual/sprites/sites/ad2.png" id="11_6iyac"]
 [ext_resource type="Texture2D" uid="uid://dgg4gk2c0cfh8" path="res://Visual/sprites/tabsPatch.png" id="12_wsu2k"]
@@ -19,13 +19,6 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
-
-[sub_resource type="Gradient" id="Gradient_hptm8"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_d1ilt"]
-gradient = SubResource("Gradient_hptm8")
-width = 32
-height = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28hdt"]
 bg_color = Color(0, 0, 0, 0.38431373)
@@ -77,58 +70,13 @@ offset_top = 788.0
 offset_right = 381.0
 offset_bottom = 1080.0
 
-[node name="Button" parent="Mail" index="2"]
-visible = false
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Mail/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
+[node name="Mail" parent="Mail/ScrollContainer/VBoxContainer" instance=ExtResource("5_k12tt")]
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Mail/ScrollContainer/VBoxContainer/Button"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 9.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer"]
-layout_mode = 2
-texture = SubResource("GradientTexture2D_d1ilt")
-stretch_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer/VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_ynf5e")
-theme_override_font_sizes/font_size = 26
-text = "Marie Christie"
-text_overrun_behavior = 3
-
-[node name="Label2" type="Label" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer/VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(1.0184411, 1.0184411, 1.0184411, 0.34117648)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("9_ynf5e")
-text = "J'e n'arrive pas a trouver"
-autowrap_mode = 2
-clip_text = true
-text_overrun_behavior = 3
 
 [node name="Title2" type="Label" parent="Mail"]
 layout_mode = 0

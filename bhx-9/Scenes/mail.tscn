@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://nj7xc6qfgql3"]
+
+[ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="1_7wrfb"]
+
+[sub_resource type="Gradient" id="Gradient_hptm8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d1ilt"]
+gradient = SubResource("Gradient_hptm8")
+width = 32
+height = 32
+
+[node name="Mail" type="Button"]
+custom_minimum_size = Vector2(0, 80)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_d1ilt")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7wrfb")
+theme_override_font_sizes/font_size = 26
+text = "Marie Christie"
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1.0184411, 1.0184411, 1.0184411, 0.34117648)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_7wrfb")
+text = "J'e n'arrive pas a trouver"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
