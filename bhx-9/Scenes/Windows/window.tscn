@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0g3bp6kj72m"]
+[gd_scene load_steps=4 format=3 uid="uid://c0g3bp6kj72m"]
 
 [ext_resource type="Texture2D" uid="uid://dgg4gk2c0cfh8" path="res://Visual/sprites/tabsPatch.png" id="1_28hdt"]
 [ext_resource type="Script" uid="uid://bfchd74urbuq1" path="res://Scripts/window.gd" id="1_g88ka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28hdt"]
+bg_color = Color(0, 0, 0, 0.38431373)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Window" type="NinePatchRect"]
 offset_right = 670.0
@@ -14,6 +21,30 @@ patch_margin_top = 52
 patch_margin_right = 76
 patch_margin_bottom = 12
 script = ExtResource("1_g88ka")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_28hdt")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -3.0
+offset_right = 142.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 40
+text = "TITLE"
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

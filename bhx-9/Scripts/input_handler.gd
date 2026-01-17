@@ -51,8 +51,8 @@ func focus_selected_window() -> void:
 	selected_window.z_index = 3
 
 func _on_news_click() -> void:
-	twitter.z_index -= 1
 	article.z_index -= 1
+	twitter.z_index -= 1
 	news.z_index = 3
 
 func _on_article_click() -> void:
