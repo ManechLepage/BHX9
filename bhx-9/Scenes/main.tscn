@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=30 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwlmm8jucom6s" path="res://Visual/sprites/defaultsquaredisabled.png" id="13_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="14_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
+[ext_resource type="Script" uid="uid://dgpft72taljbh" path="res://Scripts/bottom_investigation.gd" id="16_h1bgf"]
 [ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="16_k12tt"]
 [ext_resource type="Script" uid="uid://c5rgyewbeb3x7" path="res://Scripts/body.gd" id="17_h1bgf"]
 
@@ -278,10 +279,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -150.0
-offset_top = -68.0
-offset_right = 150.0
-offset_bottom = 46.0
+offset_left = -153.0
+offset_top = -69.0
+offset_right = 147.0
+offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.4700758, 0.47007585, 0.47007567, 1)
 theme_override_font_sizes/font_size = 40
@@ -388,14 +389,45 @@ label_settings = SubResource("LabelSettings_k12tt")
 
 [node name="Button" type="Button" parent="Investigation/ScrollContainer/Top"]
 layout_mode = 0
-offset_left = 745.0
-offset_top = 442.0
-offset_right = 961.0
-offset_bottom = 489.0
+offset_left = 739.0
+offset_top = 440.0
+offset_right = 955.0
+offset_bottom = 487.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
 theme_override_font_sizes/font_size = 40
 text = "Reply"
+
+[node name="Bottom" type="Panel" parent="Investigation/ScrollContainer"]
+custom_minimum_size = Vector2(0, 360.21)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_6iyac")
+script = ExtResource("16_h1bgf")
+
+[node name="response" type="RichTextLabel" parent="Investigation/ScrollContainer/Bottom"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 11.0
+offset_right = 959.0
+offset_bottom = 301.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.27022192, 0.27022192, 0.2702219, 1)
+theme_override_font_sizes/normal_font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jkdf5")
+bbcode_enabled = true
+autowrap_mode = 2
+
+[node name="Send" type="Button" parent="Investigation/ScrollContainer/Bottom"]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 304.0
+offset_right = 955.0
+offset_bottom = 351.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
+theme_override_font_sizes/font_size = 40
+text = "Send"
 
 [node name="Label" type="Label" parent="Investigation"]
 layout_mode = 0
@@ -410,6 +442,7 @@ horizontal_alignment = 1
 [connection signal="mouse_exited" from="Investigation" to="Investigation" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Investigation/Down" to="Investigation" method="_on_down_mouse_entered"]
 [connection signal="mouse_exited" from="Investigation/Down" to="Investigation" method="_on_down_mouse_exited"]
+[connection signal="pressed" from="Investigation/ScrollContainer/Top/Button" to="Investigation/ScrollContainer/Bottom" method="_on_button_pressed"]
 
 [editable path="Mail"]
 [editable path="Bicyclettes/LJN"]
