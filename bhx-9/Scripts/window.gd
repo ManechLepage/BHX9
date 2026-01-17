@@ -6,6 +6,9 @@ signal unselect()
 
 signal click()
 
+var up_pos = Vector2(238, 164)
+var down_pos = Vector2()
+
 func _on_button_button_down() -> void:
 	selected.emit(self)
 

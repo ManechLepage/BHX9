@@ -92,7 +92,7 @@ offset_top = 287.0
 offset_right = 1077.0
 offset_bottom = 763.0
 
-[node name="Button" parent="Article" index="0"]
+[node name="Button" parent="Article" index="2"]
 offset_top = -6.0
 offset_bottom = 59.0
 
@@ -239,15 +239,16 @@ theme_override_font_sizes/font_size = 80
 text = "MAIL"
 
 [node name="Investigation" type="NinePatchRect" parent="."]
+z_index = 20
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 238.0
-offset_top = 164.0
+offset_top = 1080.0
 offset_right = 1238.0
-offset_bottom = 1097.0
+offset_bottom = 2013.0005
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 0
@@ -260,6 +261,7 @@ patch_margin_bottom = 12
 script = ExtResource("9_hptm8")
 
 [node name="Down" type="Button" parent="Investigation"]
+z_index = -1
 clip_contents = true
 layout_mode = 1
 anchors_preset = 5
@@ -268,12 +270,14 @@ anchor_right = 0.5
 offset_left = -150.0
 offset_top = -68.0
 offset_right = 150.0
+offset_bottom = 46.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.4700758, 0.47007585, 0.47007567, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_d1ilt")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_fdnlq")
-text = "\\\\CLOSE//"
+text = "\\\\CLOSE//
+."
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Investigation"]
 layout_mode = 1
@@ -286,6 +290,7 @@ offset_right = -12.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
@@ -303,6 +308,10 @@ vertical_scroll_mode = 2
 [connection signal="focus_entered" from="News" to="InputHandler" method="_on_news_focus_entered"]
 [connection signal="selected" from="News" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="News" to="InputHandler" method="unselect_window"]
+[connection signal="mouse_entered" from="Investigation" to="Investigation" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Investigation" to="Investigation" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Investigation/Down" to="Investigation" method="_on_down_mouse_entered"]
+[connection signal="mouse_exited" from="Investigation/Down" to="Investigation" method="_on_down_mouse_exited"]
 
 [editable path="Twitter"]
 [editable path="Article"]
