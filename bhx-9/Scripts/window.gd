@@ -30,3 +30,7 @@ func _on_button_pressed() -> void:
 	visible = false
 	scale = Vector2.ONE
 	input_handler.reset_emails()
+
+func _on_exit_pressed() -> void:
+	var input_manager: InputHandler = get_tree().get_first_node_in_group("InputManager")
+	input_manager.delete_window(self)

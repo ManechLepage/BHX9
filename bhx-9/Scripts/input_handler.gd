@@ -84,3 +84,12 @@ func reset_emails() -> void:
 	investigation.body.text = ""
 	investigation.bottom.response.text = ""
 	investigation.bottom.current_index = 0
+
+func delete_window(window: WindowUI) -> void:
+	active_windows.erase(window)
+	var tween = create_tween()
+	tween.tween_property(window, "scale", Vector2.ZERO, 0.2).set_trans(Tween.TRANS_LINEAR)
+	await tween.finished
+	
+	window.scale = Vector2.ZERO
+	window.visible = false

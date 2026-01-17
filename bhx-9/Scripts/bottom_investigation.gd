@@ -7,7 +7,7 @@ var current_index = 0
 @onready var popups: Control = $"../../Popups"
 
 func _on_button_pressed() -> void:
-	
+	if not investigation.email: return
 	if current_index == 0: 
 		next_step()
 		button.disabled = true

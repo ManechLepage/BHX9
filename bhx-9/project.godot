@@ -32,6 +32,10 @@ folder_colors={
 "res://Scripts/": "blue"
 }
 
+[global_group]
+
+InputManager=""
+
 [gui]
 
 theme/custom="uid://85qyyovww5bb"
