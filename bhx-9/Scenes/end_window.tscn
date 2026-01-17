@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c1pi6hn1k7eeo"]
+[gd_scene load_steps=0 format=3 uid="uid://c1pi6hn1k7eeo"]
 
 [node name="Panel" type="NinePatchRect"]
 anchors_preset = 15

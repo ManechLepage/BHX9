@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=17 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scripts/tv_panel.gd" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
+[ext_resource type="Texture2D" uid="uid://i0hcpaau77ti" path="res://Visual/sprites/investigation.png" id="7_ynf5e"]
+[ext_resource type="Script" uid="uid://bfchd74urbuq1" path="res://Scripts/window.gd" id="8_hptm8"]
 [ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://e80b8kjgrck1" path="res://Visual/sprites/investigation_top.png" id="10_hptm8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -15,8 +18,31 @@ texture = ExtResource("2_8gbba")
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d1ilt"]
 gradient = SubResource("Gradient_hptm8")
-width = 12
-height = 12
+width = 32
+height = 32
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1ilt"]
+texture = ExtResource("10_hptm8")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 96, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6iyac"]
+load_path = "res://.godot/imported/defaultsquaredisabled.png-ab8cf1216283b61b1037e6223cbcf775.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdnlq"]
+texture = SubResource("CompressedTexture2D_6iyac")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+region_rect = Rect2(0, 0, 64, 64)
 
 [node name="Main" type="Node2D"]
 
@@ -141,47 +167,124 @@ text = "Info asdk ask posla ads"
 
 [node name="Mail" parent="." instance=ExtResource("1_jjgbg")]
 offset_left = 1.0
-offset_top = 662.0
-offset_right = 232.0
-offset_bottom = 1079.0
+offset_top = 788.0
+offset_right = 381.0
+offset_bottom = 1080.0
 
 [node name="Button" parent="Mail" index="0"]
 visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer" index="0"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Mail/ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="Mail/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mail/ScrollContainer/VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer"]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_d1ilt")
+stretch_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Control" type="Control" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Mail/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
+[node name="Label" type="Label" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer/VBoxContainer"]
 modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-offset_right = 161.0
-offset_bottom = 18.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("9_ynf5e")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 26
 text = "Marie Christie"
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="Mail/ScrollContainer/VBoxContainer/Button/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1.0184411, 1.0184411, 1.0184411, 0.34117648)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("9_ynf5e")
+text = "J'e n'arrive pas a trouver"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="Title" type="Label" parent="Mail"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = -1.0
-offset_right = 114.0
-offset_bottom = 17.0
+offset_left = 28.0
+offset_top = -2.0
+offset_right = 224.0
+offset_bottom = 70.0
 scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 80
 text = "MAIL"
+
+[node name="Investigation" type="NinePatchRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 238.0
+offset_top = 164.0
+offset_right = 1238.0
+offset_bottom = 1097.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+texture = ExtResource("7_ynf5e")
+region_rect = Rect2(0, 0, 128, 75)
+patch_margin_left = 12
+patch_margin_top = 51
+patch_margin_right = 12
+patch_margin_bottom = 12
+script = ExtResource("8_hptm8")
+
+[node name="Down" type="Button" parent="Investigation"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = -68.0
+offset_right = 150.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.4700758, 0.47007585, 0.47007567, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_d1ilt")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fdnlq")
+text = "\\\\CLOSE//"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Investigation"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 52.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
 [connection signal="click" from="Twitter" to="InputHandler" method="_on_twitter_click"]
 [connection signal="focus_entered" from="Twitter" to="InputHandler" method="_on_twitter_focus_entered"]
