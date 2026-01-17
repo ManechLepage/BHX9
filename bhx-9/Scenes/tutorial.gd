@@ -19,6 +19,7 @@ func invest2_done():
 		$"../Investigation".frozen = true
 		stage = max(stage, 3)
 		$Tuto2Invest2.hide()
+		$"../Investigation/ScrollContainer/Top/Button".z_index = 0
 		$Tuto4truth.show()
 	
 func truth_done():

@@ -13,6 +13,7 @@ func _on_button_pressed() -> void:
 		button.disabled = true
 
 func next_step() -> void:
+	$"../..".frozen = true
 	var previous_text = response.text
 	var added_string = investigation.email.response_message[current_index]
 	var filtered_string = ""
@@ -28,6 +29,7 @@ func next_step() -> void:
 		filtered_string += added_string[i]
 	response.text = previous_text + added_string
 	current_index += 1
+	$"../..".frozen = false
 	if current_index == investigation.email.response_message.size(): return
 	
 	await get_tree().create_timer(0.2).timeout

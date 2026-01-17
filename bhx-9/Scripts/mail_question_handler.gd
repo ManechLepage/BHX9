@@ -3,7 +3,7 @@ extends NinePatchRect
 
 var opened: bool = false
 var up_pos: float = 150
-var down_pos: float = 1083
+var down_pos: float = 1065
 @onready var down: Button = $Down
 var tween: Tween
 var ping_tween : Tween
@@ -73,6 +73,7 @@ func ping(kill = false) -> void:
 		ping_tween.tween_property($Down/Sprite2D,"modulate",Color(Color.WHITE),0)
 
 func _on_send_pressed() -> void:
+	
 	if answers.size() != 3: return
 	var counter: int = 0
 	for i in range(3):

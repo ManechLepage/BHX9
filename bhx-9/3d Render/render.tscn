@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bqbeud1bkmmpw"]
+[gd_scene load_steps=43 format=4 uid="uid://bqbeud1bkmmpw"]
 
 [ext_resource type="Texture2D" uid="uid://dqks581gx4bvy" path="res://3d Render/Model/PC_COMPLEMENTOS_baseColor.jpg" id="1_gjmww"]
 [ext_resource type="Shader" uid="uid://b64p3amnpkfmk" path="res://3d Render/shaders/CRT.gdshader" id="2_435c0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://hc2hhxdqvcfl" path="res://3d Render/Model/PC_PRINCIPAL_baseColor..png" id="7_atw34"]
 [ext_resource type="Script" uid="uid://byyhkrfbjq16d" path="res://3d Render/3DLook.gd" id="8_hqsds"]
 [ext_resource type="Shader" uid="uid://cfcv37avc8h5u" path="res://3d Render/Post1.gdshader" id="10_435c0"]
+[ext_resource type="Script" uid="uid://lfhd2r5d2f11" path="res://3d Render/black.gd" id="12_4i6ln"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gjmww"]
 viewport_path = NodePath("Base/TextureRect/3D")
@@ -507,3 +508,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="black" type="CanvasLayer" parent="Post1/ScreenPostP"]
+
+[node name="ColorRect" type="ColorRect" parent="Post1/ScreenPostP/black"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("12_4i6ln")
