@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=7 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scenes/tv_panel.gd" id="5_kry3j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -41,15 +42,53 @@ layout_mode = 2
 
 [node name="News" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = 54.0
-offset_top = 136.0
-offset_right = 162.0
-offset_bottom = 236.0
+offset_left = 108.0
+offset_top = 135.0
+offset_right = 252.0
+offset_bottom = 252.0
 
 [node name="ScrollContainer" parent="News" index="1"]
 visible = false
 
-[node name="Youtube" parent="." instance=ExtResource("1_jjgbg")]
+[node name="Panel" type="Panel" parent="News"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -18.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("5_kry3j")
+
+[node name="Label" type="Label" parent="News/Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 290.0
+offset_bottom = 20.0
+text = "Info asdk ask posla ads"
+
+[node name="Label2" type="Label" parent="News/Panel/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 46.0
+offset_top = -11.0
+offset_right = 334.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Info tele tres importante "
+
+[node name="Article" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
 offset_left = 221.0
 offset_top = 7.0
@@ -60,8 +99,9 @@ offset_bottom = 101.0
 [connection signal="unselect" from="Twitter" to="InputHandler" method="unselect_window"]
 [connection signal="selected" from="News" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="News" to="InputHandler" method="unselect_window"]
-[connection signal="selected" from="Youtube" to="InputHandler" method="select_window"]
-[connection signal="unselect" from="Youtube" to="InputHandler" method="unselect_window"]
+[connection signal="selected" from="Article" to="InputHandler" method="select_window"]
+[connection signal="unselect" from="Article" to="InputHandler" method="unselect_window"]
 
 [editable path="Twitter"]
 [editable path="News"]
+[editable path="Article"]

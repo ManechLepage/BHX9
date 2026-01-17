@@ -9,7 +9,7 @@ var offset: Vector2
 @onready var main: Node2D = $".."
 
 @onready var twitter: WindowUI = %Twitter
-@onready var youtube: WindowUI = %Youtube
+@onready var article: WindowUI = %Article
 @onready var news: WindowUI = %News
 
 enum InputState {
@@ -39,7 +39,7 @@ func unselect_window() -> void:
 
 func focus_selected_window() -> void:
 	twitter.z_index -= 1
-	youtube.z_index -= 1
+	article.z_index -= 1
 	news.z_index -= 1
 	
 	selected_window.z_index = 3
