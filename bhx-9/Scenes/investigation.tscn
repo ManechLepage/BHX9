@@ -91,6 +91,8 @@ font_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcuqx"]
+content_margin_left = 8.0
+content_margin_right = 8.0
 texture = ExtResource("11_csxm7")
 texture_margin_left = 64.0
 texture_margin_top = 4.0
@@ -242,7 +244,6 @@ text = "Help!"
 label_settings = SubResource("LabelSettings_k12tt")
 
 [node name="Button" type="Button" parent="ScrollContainer/Top"]
-visible = false
 layout_mode = 0
 offset_left = 739.0
 offset_top = 440.0
@@ -300,12 +301,13 @@ offset_bottom = 933.0
 mouse_filter = 2
 
 [node name="PopupVelo1" type="PanelContainer" parent="Popups"]
+visible = false
 layout_mode = 0
-offset_left = 854.0
-offset_top = 523.0
-offset_right = 1147.0
-offset_bottom = 639.0
-pivot_offset = Vector2(70.575, 110.995)
+offset_left = 853.0
+offset_top = 506.0
+offset_right = 1146.0
+offset_bottom = 625.0
+pivot_offset = Vector2(46.13, 118.86)
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_kcuqx")
 script = ExtResource("12_kcuqx")
@@ -314,6 +316,7 @@ script = ExtResource("12_kcuqx")
 layout_mode = 2
 
 [node name="Augmenter" type="Button" parent="Popups/PopupVelo1/VBoxContainer"]
+modulate = Color(0.49464804, 0.73427325, 0.48122567, 1)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
@@ -321,6 +324,7 @@ theme_override_font_sizes/font_size = 40
 text = "Augmente"
 
 [node name="Diminuer" type="Button" parent="Popups/PopupVelo1/VBoxContainer"]
+modulate = Color(0.76735914, 0.36882946, 0.31762317, 1)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.38928607, 0.38928694, 0.38928625, 1)
@@ -332,3 +336,5 @@ text = "Diminue"
 [connection signal="mouse_entered" from="Down" to="." method="_on_down_mouse_entered"]
 [connection signal="mouse_exited" from="Down" to="." method="_on_down_mouse_exited"]
 [connection signal="pressed" from="ScrollContainer/Top/Button" to="ScrollContainer/Bottom" method="_on_button_pressed"]
+[connection signal="pressed" from="Popups/PopupVelo1/VBoxContainer/Augmenter" to="Popups/PopupVelo1" method="_on_augmenter_pressed"]
+[connection signal="pressed" from="Popups/PopupVelo1/VBoxContainer/Diminuer" to="Popups/PopupVelo1" method="_on_diminuer_pressed"]

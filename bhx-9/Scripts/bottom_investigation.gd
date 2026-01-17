@@ -5,7 +5,6 @@ extends Panel
 var current_index = 0
 @onready var button: Button = $"../Top/Button"
 @onready var popups: Control = $"../../Popups"
-var popup_child_offset: int = 0
 
 func _on_button_pressed() -> void:
 	if current_index == 0: 
@@ -32,7 +31,7 @@ func next_step() -> void:
 	
 	await get_tree().create_timer(0.2).timeout
 	
-	var popup: PopupUI = popups.get_child(popup_child_offset + current_index - 1)
+	var popup: PopupUI = popups.get_child(investigation.email.popup_offset + current_index - 1)
 	var tween = create_tween()
 	popup.scale = Vector2.ZERO
 	popup.visible = true
