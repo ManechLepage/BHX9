@@ -6,6 +6,7 @@ var up_pos: float = 150
 var down_pos: float = 1083
 @onready var down: Button = $Down
 var tween: Tween
+var ping_tween : Tween
 
 @export var email: Email
 @onready var texture_rect: TextureRect = $ScrollContainer/Top/Panel/TextureRect
@@ -22,6 +23,7 @@ func load_email() -> void:
 	date.text = email.date
 	header.text = email.title
 	body.load_email()
+	ping()
 
 func _on_down_mouse_entered() -> void:
 	if tween and tween.is_running(): return
@@ -33,9 +35,29 @@ func _on_mouse_exited() -> void:
 	animate_down()
 
 func animate_up() -> void:
+	ping(true)
 	tween = create_tween()
 	tween.tween_property(self, "position:y", up_pos, 0.4).set_trans(Tween.TRANS_QUINT)
 
 func animate_down() -> void:
 	tween = create_tween()
 	tween.tween_property(self, "position:y", down_pos, 0.4).set_trans(Tween.TRANS_QUINT)
+
+func ping(kill = false) -> void:
+	if kill:
+		if ping_tween and ping_tween.is_running(): 
+			ping_tween.kill()
+			$Down/Sprite2D.visible = false
+			
+	else:
+		$Down/Sprite2D.visible = true
+		$Down/Sprite2D.scale = Vector2.ZERO
+		$Down/Sprite2D.modulate = Color(Color.WHITE)
+		ping_tween  = create_tween()
+		ping_tween.set_loops(10)
+		ping_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+		ping_tween.tween_property($Down/Sprite2D,"scale",Vector2.ONE * 5,2)
+		ping_tween.parallel().tween_property($Down/Sprite2D,"modulate",Color(1,1,1,0),2)
+		ping_tween.tween_property($Down/Sprite2D,"scale",Vector2.ZERO,0)
+		ping_tween.tween_property($Down/Sprite2D,"modulate",Color(Color.WHITE),0)
+		
