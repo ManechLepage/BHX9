@@ -17,12 +17,14 @@ modulate = Color(1, 1, 1, 0.3647059)
 position = Vector2(59.749992, 42)
 scale = Vector2(0.24099998, 0.28)
 sprite_frames = ExtResource("1_syhk1")
+autoplay = "default"
 frame_progress = 0.51012564
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(58, 49)
 scale = Vector2(0.41925466, 0.41925466)
 sprite_frames = ExtResource("1_x1o7i")
+autoplay = "default"
 frame_progress = 0.017483758
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
