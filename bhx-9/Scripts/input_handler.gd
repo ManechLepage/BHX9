@@ -7,6 +7,7 @@ var input_state: InputState
 var offset: Vector2
 
 @onready var main: Node2D = $".."
+@onready var mouse: Sprite2D = $"../Mouse"
 
 @onready var twitter: WindowUI = %Twitter
 @onready var article: WindowUI = %Article
@@ -17,9 +18,13 @@ enum InputState {
 	SELECTING
 }
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
 @warning_ignore("unused_parameter")
-func _unhandled_input(event: InputEvent) -> void:
-	pass
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		mouse.position = mouse.get_global_mouse_position()
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
@@ -38,8 +43,23 @@ func unselect_window() -> void:
 	selected_window = null
 
 func focus_selected_window() -> void:
-	twitter.z_index -= 1
-	article.z_index -= 1
-	news.z_index -= 1
+	twitter.z_index = 1
+	article.z_index = 1
+	news.z_index = 1
 	
 	selected_window.z_index = 3
+
+func _on_twitter_focus_entered() -> void:
+	twitter.z_index = 3
+	article.z_index = 1
+	news.z_index = 1
+
+func _on_news_focus_entered() -> void:
+	twitter.z_index = 1
+	article.z_index = 1
+	news.z_index = 3
+
+func _on_article_focus_entered() -> void:
+	twitter.z_index = 1
+	article.z_index = 3
+	news.z_index = 1

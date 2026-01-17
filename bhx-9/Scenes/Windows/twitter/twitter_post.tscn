@@ -6,12 +6,13 @@
 gradient = SubResource("Gradient_hevlb")
 
 [node name="TwitterPost" type="Panel"]
-custom_minimum_size = Vector2(140, 60)
+custom_minimum_size = Vector2(158, 60)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1776.0
-offset_bottom = -1023.0
+offset_top = -1.5
+offset_right = -1762.0
+offset_bottom = -1021.5
 grow_horizontal = 2
 grow_vertical = 2
 

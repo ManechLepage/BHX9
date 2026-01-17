@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=9 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnndm2pk4pm3f" path="res://Scenes/timer.tscn" id="3_21xkr"]
 [ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scripts/tv_panel.gd" id="5_kry3j"]
+[ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -14,6 +15,11 @@ texture = ExtResource("2_8gbba")
 
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("1_bo1nx")
+
+[node name="Mouse" type="Sprite2D" parent="."]
+z_index = 2000
+position = Vector2(183, 112)
+texture = ExtResource("7_6bp64")
 
 [node name="Panel" type="PanelContainer" parent="."]
 z_index = -10
@@ -42,8 +48,8 @@ grow_vertical = 1
 unique_name_in_owner = true
 offset_left = 20.0
 offset_top = 17.0
-offset_right = 174.0
-offset_bottom = 119.0
+offset_right = 190.0
+offset_bottom = 140.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Twitter/ScrollContainer" index="0"]
 layout_mode = 2
@@ -56,9 +62,9 @@ layout_mode = 2
 
 [node name="News" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = 108.0
+offset_left = 113.0
 offset_top = 135.0
-offset_right = 252.0
+offset_right = 276.0
 offset_bottom = 252.0
 
 [node name="ScrollContainer" parent="News" index="1"]
@@ -104,10 +110,10 @@ text = "Info tele tres importante "
 
 [node name="Article" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = 221.0
-offset_top = 7.0
-offset_right = 324.0
-offset_bottom = 101.0
+offset_left = 195.0
+offset_top = 46.0
+offset_right = 342.0
+offset_bottom = 184.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Article/ScrollContainer" index="0"]
 layout_mode = 2
@@ -126,7 +132,7 @@ custom_minimum_size = Vector2(90.675, 0)
 layout_mode = 0
 offset_left = 1.9999999
 offset_top = -1.9999995
-offset_right = 356.71704
+offset_right = 500.11316
 offset_bottom = 2053.0
 scale = Vector2(0.265, 0.265)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -142,10 +148,14 @@ Outre l’apparence visuelle, la fluidité des transitions et des interactions c
 Finalement, la réussite d’une interface repose sur un équilibre entre forme et fonction. Une interface exclusivement pratique risque de paraître trop froide ou technique, tandis qu’une interface trop visuelle peut se révéler inefficace. Les créateurs doivent donc comprendre les besoins réels des utilisateurs, anticiper leurs comportements et itérer constamment. Car une interface réussie n’est jamais figée : elle évolue avec le temps, s’adapte aux usages, aux technologies et aux exigences du public."
 autowrap_mode = 2
 
+[connection signal="focus_entered" from="Twitter" to="InputHandler" method="_on_twitter_focus_entered"]
 [connection signal="selected" from="Twitter" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="Twitter" to="InputHandler" method="unselect_window"]
+[connection signal="focus_entered" from="Twitter/ScrollContainer/VBoxContainer/TwitterPost" to="InputHandler" method="_on_twitter_post_focus_entered"]
+[connection signal="focus_entered" from="News" to="InputHandler" method="_on_news_focus_entered"]
 [connection signal="selected" from="News" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="News" to="InputHandler" method="unselect_window"]
+[connection signal="focus_entered" from="Article" to="InputHandler" method="_on_article_focus_entered"]
 [connection signal="selected" from="Article" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="Article" to="InputHandler" method="unselect_window"]
 
