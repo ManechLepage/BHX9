@@ -1,11 +1,11 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://85qyyovww5bb"]
 
 [ext_resource type="Texture2D" uid="uid://dwlmm8jucom6s" path="res://Visual/sprites/defaultsquaredisabled.png" id="1_1tyxu"]
-[ext_resource type="FontFile" uid="uid://bmkfgj54mw4qx" path="res://Visual/Jersey10-Regular.ttf" id="1_tiivk"]
 [ext_resource type="Texture2D" uid="uid://dgg4gk2c0cfh8" path="res://Visual/sprites/tabsPatch.png" id="1_xrraj"]
 [ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="2_y6i65"]
 [ext_resource type="Texture2D" uid="uid://v57b4l6sxaky" path="res://Visual/sprites/defaultsquare.png" id="3_4kqaa"]
 [ext_resource type="Texture2D" uid="uid://d2tcuucodqktg" path="res://Visual/sprites/defaultsquarepressed.png" id="4_3h814"]
+[ext_resource type="FontFile" uid="uid://bs7f0yvubtiws" path="res://Visual/upheavtt.ttf" id="6_y6i65"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmutd"]
 texture = ExtResource("1_1tyxu")
@@ -66,13 +66,14 @@ bg_color = Color(0.8949228, 0.8949223, 0.8949224, 1)
 corner_detail = 1
 
 [resource]
-default_font = ExtResource("1_tiivk")
+default_font = ExtResource("6_y6i65")
 default_font_size = 19
 Button/styles/disabled = SubResource("StyleBoxTexture_vmutd")
 Button/styles/focus = SubResource("StyleBoxTexture_mm0tm")
 Button/styles/hover = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/normal = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/pressed = SubResource("StyleBoxTexture_isbx3")
+Label/font_sizes/font_size = 20
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_1tyxu")
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_rcuxm")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_rcuxm")

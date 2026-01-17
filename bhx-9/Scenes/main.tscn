@@ -24,19 +24,31 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_8gbba")
 
 [node name="Twitter" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
-offset_left = 20.0
-offset_top = 17.0
-offset_right = 126.0
+offset_left = -220.0
+offset_top = -119.0
+offset_right = -64.0
+offset_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Twitter/ScrollContainer/VScrollBar" index="0"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_right = -6.0
 offset_bottom = 116.0
+grow_horizontal = 0
 
-[node name="News" parent="." instance=ExtResource("1_jjgbg")]
-unique_name_in_owner = true
-offset_left = 54.0
-offset_top = 136.0
-offset_right = 162.0
-offset_bottom = 236.0
+[node name="TwitterPost" parent="Twitter/ScrollContainer/VScrollBar/VBoxContainer" instance=ExtResource("3_8gbba")]
+layout_mode = 2
 
-[node name="Youtube" parent="." instance=ExtResource("1_jjgbg")]
+[node name="TwitterPost2" parent="Twitter/ScrollContainer/VScrollBar/VBoxContainer" instance=ExtResource("3_8gbba")]
+layout_mode = 2
+
+[node name="TwitterPost3" parent="Twitter/ScrollContainer/VScrollBar/VBoxContainer" instance=ExtResource("3_8gbba")]
+layout_mode = 2
+
+[node name="TV" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
 offset_left = 221.0
 offset_top = 7.0
@@ -45,7 +57,10 @@ offset_bottom = 101.0
 
 [connection signal="selected" from="Twitter" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="Twitter" to="InputHandler" method="unselect_window"]
-[connection signal="selected" from="News" to="InputHandler" method="select_window"]
-[connection signal="unselect" from="News" to="InputHandler" method="unselect_window"]
-[connection signal="selected" from="Youtube" to="InputHandler" method="select_window"]
-[connection signal="unselect" from="Youtube" to="InputHandler" method="unselect_window"]
+[connection signal="selected" from="TV" to="InputHandler" method="select_window"]
+[connection signal="unselect" from="TV" to="InputHandler" method="unselect_window"]
+[connection signal="selected" from="Article" to="InputHandler" method="select_window"]
+[connection signal="unselect" from="Article" to="InputHandler" method="unselect_window"]
+
+[editable path="Twitter"]
+[editable path="TV"]
