@@ -10,6 +10,7 @@ var offset: Vector2
 @onready var mouse: Node2D = $"../Mouse"
 @onready var investigation: Investigation = $"../Investigation"
 @onready var mail_ui: WindowUI = $"../Mail"
+@onready var tuto_man: Control = $"../Tuto"
 
 var active_windows: Array[WindowUI]
 
@@ -58,6 +59,7 @@ func add_window(window: WindowUI) -> void:
 	window.unselect.connect(unselect_window)
 
 func investigate_email(mail: Mail) -> void:
+	tuto_man.email_done()
 	investigation.email = mail.email_info
 	investigation.load_email()
 	await get_tree().create_timer(0.2).timeout

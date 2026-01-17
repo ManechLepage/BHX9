@@ -7,6 +7,7 @@ var current_index = 0
 @onready var popups: Control = $"../../Popups"
 
 func _on_button_pressed() -> void:
+	
 	if current_index == 0: 
 		next_step()
 		button.disabled = true
@@ -37,6 +38,7 @@ func next_step() -> void:
 	popup.visible = true
 	tween.tween_property(popup, "scale", Vector2.ONE, 0.1).set_trans(Tween.TRANS_LINEAR)
 	popup.response_word.connect(receive_change)
+	$"../../../Tuto".invest2_done()
 
 func receive_change(popup: PopupUI, word: String) -> void:
 	var tween = create_tween()

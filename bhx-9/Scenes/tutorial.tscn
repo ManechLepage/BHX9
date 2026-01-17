@@ -1,0 +1,172 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbswlwcepn7p3"]
+
+[ext_resource type="Texture2D" uid="uid://bor1q31p2kkni" path="res://Visual/sprites/popup.png" id="1_ka2pi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_feyax"]
+content_margin_left = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 28.0
+texture = ExtResource("1_ka2pi")
+texture_margin_left = 64.0
+texture_margin_top = 4.0
+texture_margin_right = 27.0
+texture_margin_bottom = 20.0
+
+[node name="Tuto" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tuto1Mail" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 2
+color = Color(0, 0, 0, 0.3254902)
+
+[node name="PanelContainer" type="PanelContainer" parent="Tuto1Mail"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 604.0
+offset_right = 624.0
+offset_bottom = 828.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_feyax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tuto1Mail/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tuto1Mail/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Voici vos courriels. Sélectionnez un message pour commencer."
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Tuto1Mail/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Ok"
+
+[node name="Tuto2Invest" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 2
+color = Color(0, 0, 0, 0.3254902)
+
+[node name="PanelContainer" type="PanelContainer" parent="Tuto2Invest"]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 761.0
+offset_right = 1216.0
+offset_bottom = 932.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_feyax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tuto2Invest/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tuto2Invest/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Ensuite, sortez votre menu d'investigation"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Tuto2Invest/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Ok"
+
+[node name="Tuto2Invest2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 2
+color = Color(0, 0, 0, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="Tuto2Invest2"]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 201.0
+offset_right = 1407.0
+offset_bottom = 308.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_feyax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tuto2Invest2/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tuto2Invest2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Lisez bien le message, puis pesez sur \"Répondre\""
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Tuto2Invest2/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Ok"
+
+[node name="Tuto4truth" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+color = Color(0, 0, 0, 0.3254902)
+
+[node name="PanelContainer" type="PanelContainer" parent="Tuto4truth"]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 208.0
+offset_right = 1312.0
+offset_bottom = 714.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_feyax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tuto4truth/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tuto4truth/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Pour combattre la désinformation, il faut diversifier nos sources. 
+trouvez la vérité en assurant que plusieurs sources affirment les mêmes faits."
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Tuto4truth/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Ok"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bqbeud1bkmmpw"]
+[gd_scene load_steps=41 format=4 uid="uid://bqbeud1bkmmpw"]
 
 [ext_resource type="Texture2D" uid="uid://dqks581gx4bvy" path="res://3d Render/Model/PC_COMPLEMENTOS_baseColor.jpg" id="1_gjmww"]
 [ext_resource type="Shader" uid="uid://b64p3amnpkfmk" path="res://3d Render/shaders/CRT.gdshader" id="2_435c0"]
@@ -329,7 +329,7 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/roll_size = 3.6810001748475
 shader_parameter/roll_variation = 1.21000005421512
 shader_parameter/distort_intensity = 0.010000000475
-shader_parameter/aberration = 0.0010000475475000492
+shader_parameter/aberration = 0.00100004754750004
 shader_parameter/noise_opacity = 0.1200000057
 shader_parameter/noise_speed = 5.0
 shader_parameter/static_noise_intensity = 0.0570000027075
@@ -344,6 +344,30 @@ shader_parameter/vignette_opacity = 0.3190000151525
 shader = ExtResource("10_435c0")
 shader_parameter/intensity = 1.0
 shader_parameter/threshold = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_435c0"]
+shader = ExtResource("2_435c0")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(720, 540)
+shader_parameter/brightness = 1.0
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.03200000152
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 3.6810001748475
+shader_parameter/roll_variation = 1.21000005421512
+shader_parameter/distort_intensity = 0.0
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.07200000342
+shader_parameter/pixelate = false
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 1.155
+shader_parameter/vignette_opacity = 0.3190000151525
 
 [node name="Render" type="Node2D"]
 
@@ -459,6 +483,17 @@ mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Post1"]
 material = SubResource("ShaderMaterial_4i6ln")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScreenPostP" type="CanvasLayer" parent="Post1"]
+
+[node name="CRT" type="ColorRect" parent="Post1/ScreenPostP"]
+material = SubResource("ShaderMaterial_435c0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

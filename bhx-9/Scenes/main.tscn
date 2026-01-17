@@ -1,9 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=28 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
-[ext_resource type="PackedScene" uid="uid://nj7xc6qfgql3" path="res://Scenes/mail.tscn" id="5_k12tt"]
+[ext_resource type="PackedScene" path="res://Scenes/mail.tscn" id="5_k12tt"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cag7m04kyrg2u" path="res://Scenes/investigation.tscn" id="7_344ge"]
 [ext_resource type="Resource" uid="uid://4aw332qmsq8c" path="res://Resources/email_legault.tres" id="7_fevyy"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
 [ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="16_k12tt"]
 [ext_resource type="PackedScene" uid="uid://b0yo0ruw5647o" path="res://Scenes/Windows/win_window.tscn" id="20_hibaj"]
+[ext_resource type="PackedScene" uid="uid://bbswlwcepn7p3" path="res://Scenes/tutorial.tscn" id="21_ee4r6"]
+[ext_resource type="Script" uid="uid://c032ujguinjvj" path="res://Scenes/tutorial.gd" id="22_gt3je"]
+[ext_resource type="Texture2D" uid="uid://bor1q31p2kkni" path="res://Visual/sprites/popup.png" id="23_gt3je"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -42,6 +45,16 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_feyax"]
+content_margin_left = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 28.0
+texture = ExtResource("23_gt3je")
+texture_margin_left = 64.0
+texture_margin_top = 4.0
+texture_margin_right = 27.0
+texture_margin_bottom = 20.0
 
 [node name="Main" type="Node2D"]
 
@@ -100,6 +113,115 @@ email_info = ExtResource("8_hibaj")
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
+
+[node name="News" type="NinePatchRect" parent="Bicyclettes"]
+visible = false
+layout_mode = 0
+offset_left = 697.0
+offset_top = 94.0
+offset_right = 1367.0
+offset_bottom = 628.0
+mouse_filter = 1
+texture = ExtResource("12_wsu2k")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 20
+patch_margin_top = 52
+patch_margin_right = 76
+patch_margin_bottom = 12
+script = ExtResource("13_k12tt")
+
+[node name="Panel" type="Panel" parent="Bicyclettes/News"]
+z_index = -1
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_28hdt")
+
+[node name="Title" type="Label" parent="Bicyclettes/News"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -3.0
+offset_right = 142.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 40
+text = "En direct"
+
+[node name="Button" type="Button" parent="Bicyclettes/News"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+flat = true
+
+[node name="ScrollContainer" type="VBoxContainer" parent="Bicyclettes/News"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 52.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Container" type="Container" parent="Bicyclettes/News/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Report" parent="Bicyclettes/News/ScrollContainer/Container" instance=ExtResource("14_h1bgf")]
+scale = Vector2(5.39, 5.645)
+
+[node name="Container2" type="Panel" parent="Bicyclettes/News/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.18
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
+script = ExtResource("15_k12tt")
+scroll_speed = 3.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bicyclettes/News/ScrollContainer/Container2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="Bicyclettes/News/ScrollContainer/Container2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Bicyclettes/News/ScrollContainer/Container2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Bicyclettes/News"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+flat = true
 
 [node name="LJN" parent="Bicyclettes" instance=ExtResource("1_jjgbg")]
 visible = false
@@ -210,113 +332,6 @@ layout_mode = 2
 texture = ExtResource("11_6iyac")
 stretch_mode = 2
 
-[node name="News" type="NinePatchRect" parent="Bicyclettes"]
-visible = false
-layout_mode = 0
-offset_left = 697.0
-offset_top = 94.0
-offset_right = 1367.0
-offset_bottom = 628.0
-mouse_filter = 1
-texture = ExtResource("12_wsu2k")
-region_rect = Rect2(0, 0, 128, 128)
-patch_margin_left = 20
-patch_margin_top = 52
-patch_margin_right = 76
-patch_margin_bottom = 12
-script = ExtResource("13_k12tt")
-
-[node name="Panel" type="Panel" parent="Bicyclettes/News"]
-z_index = -1
-y_sort_enabled = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 10.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_28hdt")
-
-[node name="Title" type="Label" parent="Bicyclettes/News"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = -3.0
-offset_right = 142.0
-offset_bottom = 33.0
-theme_override_font_sizes/font_size = 40
-text = "En direct"
-
-[node name="Button" type="Button" parent="Bicyclettes/News"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 52.0
-grow_horizontal = 2
-flat = true
-
-[node name="ScrollContainer" type="VBoxContainer" parent="Bicyclettes/News"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 52.0
-offset_right = -12.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Container" type="Container" parent="Bicyclettes/News/ScrollContainer"]
-clip_contents = true
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Report" parent="Bicyclettes/News/ScrollContainer/Container" instance=ExtResource("14_h1bgf")]
-scale = Vector2(5.39, 5.645)
-
-[node name="Container2" type="Panel" parent="Bicyclettes/News/ScrollContainer"]
-clip_contents = true
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.18
-theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
-script = ExtResource("15_k12tt")
-scroll_speed = 3.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Bicyclettes/News/ScrollContainer/Container2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/separation = 40
-
-[node name="Label" type="Label" parent="Bicyclettes/News/ScrollContainer/Container2/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Bicyclettes/News/ScrollContainer/Container2/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Citoyens sautent de joie avec l'ajout d'une piste cyclable, diminution de traffique!"
-vertical_alignment = 1
-
-[node name="Button2" type="Button" parent="Bicyclettes/News"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-flat = true
-
 [node name="Investigation" parent="." instance=ExtResource("7_344ge")]
 
 [node name="WinWindow" parent="." instance=ExtResource("20_hibaj")]
@@ -326,14 +341,96 @@ offset_top = 342.0
 offset_right = 1019.0
 offset_bottom = 598.0
 
+[node name="Tuto" parent="." instance=ExtResource("21_ee4r6")]
+z_index = 0
+script = ExtResource("22_gt3je")
+
+[node name="Tuto1Mail" parent="Tuto" index="0"]
+z_index = -1
+offset_right = 1440.0
+offset_bottom = 1080.0
+
+[node name="PanelContainer" parent="Tuto/Tuto1Mail" index="0"]
+z_as_relative = false
+
+[node name="Tuto2Invest" parent="Tuto" index="1"]
+offset_right = 1440.0
+offset_bottom = 1080.0
+
+[node name="PanelContainer" parent="Tuto/Tuto2Invest" index="0"]
+offset_top = 822.0
+offset_bottom = 993.0
+
+[node name="Tuto2Invest2" parent="Tuto" index="2"]
+z_index = 30
+offset_right = 1440.0
+offset_bottom = 1080.0
+
+[node name="Tuto4truth" parent="Tuto" index="3"]
+z_index = 30
+offset_right = 1440.0
+offset_bottom = 1080.0
+
+[node name="PanelContainer" parent="Tuto/Tuto4truth" index="0"]
+offset_left = 847.0
+offset_top = 66.0
+offset_right = 1275.0
+offset_bottom = 572.0
+
+[node name="Button" parent="Tuto/Tuto4truth/PanelContainer/VBoxContainer" index="1"]
+mouse_filter = 1
+
+[node name="Tuto5link" type="ColorRect" parent="Tuto"]
+visible = false
+z_index = 30
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1440.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+color = Color(0, 0, 0, 0.3254902)
+
+[node name="PanelContainer" type="PanelContainer" parent="Tuto/Tuto5link"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 283.0
+offset_right = 1129.0
+offset_bottom = 555.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_feyax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tuto/Tuto5link/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tuto/Tuto5link/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "les articles sont colorés en bleu, sélectionnez-les pour trouver la vérité!"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Tuto/Tuto5link/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Ok"
+
 [connection signal="button_down" from="Bicyclettes/News/Button" to="Bicyclettes/News" method="_on_button_button_down"]
 [connection signal="button_up" from="Bicyclettes/News/Button" to="Bicyclettes/News" method="_on_button_button_up"]
 [connection signal="button_down" from="Bicyclettes/News/Button2" to="Bicyclettes/News" method="_on_button_2_button_down"]
+[connection signal="pressed" from="Tuto/Tuto4truth/PanelContainer/VBoxContainer/Button" to="Tuto" method="truth_done"]
+[connection signal="pressed" from="Tuto/Tuto5link/PanelContainer/VBoxContainer/Button" to="Tuto" method="link_done"]
 
 [editable path="Mail"]
+[editable path="Bicyclettes/News/ScrollContainer/Container/Report"]
 [editable path="Bicyclettes/LJN"]
 [editable path="Bicyclettes/QuackerBicycle"]
 [editable path="Bicyclettes/QuackerBicycle/ScrollContainer/VBoxContainer/TwitterPost"]
-[editable path="Bicyclettes/News/ScrollContainer/Container/Report"]
 [editable path="Investigation"]
 [editable path="WinWindow"]
+[editable path="Tuto"]

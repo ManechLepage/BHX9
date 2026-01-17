@@ -9,6 +9,8 @@ var tween: Tween
 var ping_tween : Tween
 var answers: Array[String]
 
+var frozen := false
+
 var email: Email
 
 @onready var texture_rect: TextureRect = $ScrollContainer/Top/Panel/TextureRect
@@ -40,13 +42,17 @@ func _on_mouse_exited() -> void:
 	animate_down()
 
 func animate_up() -> void:
-	ping(true)
-	tween = create_tween()
-	tween.tween_property(self, "position:y", up_pos, 0.4).set_trans(Tween.TRANS_QUINT)
+	$"../Tuto".invest_done()
+	if not frozen:
+		
+		ping(true)
+		tween = create_tween()
+		tween.tween_property(self, "position:y", up_pos, 0.4).set_trans(Tween.TRANS_QUINT)
 
 func animate_down() -> void:
-	tween = create_tween()
-	tween.tween_property(self, "position:y", down_pos, 0.4).set_trans(Tween.TRANS_QUINT)
+	if not frozen:
+		tween = create_tween()
+		tween.tween_property(self, "position:y", down_pos, 0.4).set_trans(Tween.TRANS_QUINT)
 
 func ping(kill = false) -> void:
 	if kill:
