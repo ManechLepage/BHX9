@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=30 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scripts/tv_panel.gd" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 [ext_resource type="Texture2D" uid="uid://i0hcpaau77ti" path="res://Visual/sprites/investigation.png" id="7_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://d3hqnt1qmoock" path="res://Visual/sprites/sites/LJNImage.png" id="9_h1bgf"]
 [ext_resource type="Script" uid="uid://24njsyi3fshr" path="res://Scripts/mail_question_handler.gd" id="9_hptm8"]
 [ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="9_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://difal78unv801" path="res://Visual/sprites/darksquare.png" id="10_d1ilt"]
@@ -15,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://bxs2mykxvgx00" path="res://Visual/sprites/profiles/shindy.png" id="12_6iyac"]
 [ext_resource type="Texture2D" uid="uid://dwlmm8jucom6s" path="res://Visual/sprites/defaultsquaredisabled.png" id="13_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://cwc2clpt7nust" path="res://Visual/sprites/defaultsquarefocus.png" id="14_jkdf5"]
-[ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="15_wsu2k"]
+[ext_resource type="Resource" uid="uid://cyxbktr0hqr1d" path="res://Resources/email_cycliste.tres" id="16_k12tt"]
+[ext_resource type="Texture2D" uid="uid://d305i742um6nm" path="res://Visual/sprites/sites/LJN.png" id="17_h1bgf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gbba"]
 texture = ExtResource("2_8gbba")
@@ -317,87 +317,6 @@ offset_top = 46.0
 offset_right = 629.0
 offset_bottom = 757.0
 
-[node name="Title" parent="Bicyclettes/LJN" index="1"]
-text = "News"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Bicyclettes/LJN/ScrollContainer" index="0"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 19
-
-[node name="Panel" type="TextureRect" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 140)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("15_wsu2k")
-
-[node name="Label" type="Label" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "La piste cyclable très controversée de l'ouest de Montréal sera réaménagée avec un tout nouveau look."
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-text = "La première version de la piste cyclable Côte-des-Neiges–NDG sur la rue Terrebonne a suscité une vive opposition."
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label3" type="Label" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-theme_override_font_sizes/font_size = 10
-text = "LJN News · Publié le : 31 octobre 2023 à 4 h 00 HAE 
-Dernière mise à jour : 31 octobre 2023"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Body" type="Label" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(448.591, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-theme_override_font_sizes/font_size = 18
-text = "Une piste cyclable controversée dans l'ouest de Montréal fera son retour l'an prochain après que sa première installation ait suscité une vive opposition de la part de la communauté, ce qui avait conduit le conseil d'arrondissement à y mettre fin.
-"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 220)
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_h1bgf")
-expand_mode = 2
-
-[node name="Body3" type="Label" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(448.591, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-theme_override_font_sizes/font_size = 16
-text = "La rue Terrebonne sera rendue unidirectionnelle pour les véhicules et bidirectionnelle pour les cyclistes, avec des pistes cyclables des deux côtés de son axe est-ouest.
-
-"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Body2" type="Label" parent="Bicyclettes/LJN/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(448.591, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
-theme_override_font_sizes/font_size = 18
-text = "Pour les véhicules, la rue Terrebonne sera à sens unique vers l'est entre le boulevard Cavendish et l'avenue Girouard. Elle sera à sens unique vers l'ouest entre le boulevard Cavendish et l'avenue Belmore.
-"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Investigation" type="NinePatchRect" parent="."]
 z_index = 20
 anchors_preset = 7
@@ -555,27 +474,28 @@ theme_override_font_sizes/font_size = 30
 text = "| | |          INVESTIGATION          | | |"
 horizontal_alignment = 1
 
-[node name="Window" parent="." instance=ExtResource("1_jjgbg")]
+[node name="LJN" parent="." instance=ExtResource("1_jjgbg")]
+visible = false
 offset_left = 89.0
 offset_top = 46.0
 offset_right = 629.0
 offset_bottom = 757.0
 
-[node name="Title" parent="Window" index="1"]
+[node name="Title" parent="LJN" index="1"]
 text = "News"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/ScrollContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="LJN/ScrollContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 19
 
-[node name="Panel" type="TextureRect" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Panel" type="TextureRect" parent="LJN/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("15_wsu2k")
+texture = ExtResource("17_h1bgf")
 
-[node name="Label" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="LJN/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
@@ -583,14 +503,14 @@ text = "La piste cyclable très controversée de l'ouest de Montréal sera réam
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="LJN/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
 text = "La première version de la piste cyclable Côte-des-Neiges–NDG sur la rue Terrebonne a suscité une vive opposition."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="Window/ScrollContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="LJN/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.28, 0.28, 0.28, 1)
 theme_override_font_sizes/font_size = 10
@@ -599,7 +519,7 @@ Dernière mise à jour : 31 octobre 2023"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Bicyclettes" type="Control" parent="."]
+[node name="Bicyclettes2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
@@ -626,4 +546,4 @@ mouse_filter = 1
 [editable path="Article"]
 [editable path="News"]
 [editable path="Mail"]
-[editable path="Bicyclettes/LJN"]
+[editable path="LJN"]
