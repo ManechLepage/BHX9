@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cfn2yw7l4iit"]
+[gd_scene load_steps=35 format=3 uid="uid://cag7m04kyrg2u"]
 
 [ext_resource type="Texture2D" uid="uid://i0hcpaau77ti" path="res://Visual/sprites/investigation.png" id="1_cxio4"]
 [ext_resource type="Script" uid="uid://24njsyi3fshr" path="res://Scripts/mail_question_handler.gd" id="2_csxm7"]

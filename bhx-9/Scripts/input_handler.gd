@@ -60,7 +60,6 @@ func add_window(window: WindowUI) -> void:
 func investigate_email(mail: Mail) -> void:
 	investigation.email = mail.email_info
 	investigation.load_email()
-	investigation.animate_up()
 	await get_tree().create_timer(0.2).timeout
 	var tween = create_tween()
 	tween.tween_property(mail_ui, "scale", Vector2.ZERO, 0.2).set_trans(Tween.TRANS_LINEAR)
