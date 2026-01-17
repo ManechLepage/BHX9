@@ -72,7 +72,7 @@ offset_top = 40.0
 offset_right = 1237.0
 offset_bottom = 366.0
 
-[node name="ScrollContainer" parent="Twitter" index="1"]
+[node name="ScrollContainer" parent="Twitter" index="3"]
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -129,7 +129,7 @@ offset_top = 135.0
 offset_right = 619.0
 offset_bottom = 520.0
 
-[node name="Panel" type="Panel" parent="News"]
+[node name="Panel2" type="Panel" parent="News"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 12
@@ -144,7 +144,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("5_kry3j")
 
-[node name="Label" type="Label" parent="News/Panel"]
+[node name="Label" type="Label" parent="News/Panel2"]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -2.0
@@ -153,7 +153,7 @@ offset_bottom = 20.0
 theme_override_font_sizes/font_size = 40
 text = "Info asdk ask posla ads"
 
-[node name="Label2" type="Label" parent="News/Panel/Label"]
+[node name="Label2" type="Label" parent="News/Panel2/Label"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -175,7 +175,7 @@ offset_top = 788.0
 offset_right = 381.0
 offset_bottom = 1080.0
 
-[node name="Button" parent="Mail" index="0"]
+[node name="Button" parent="Mail" index="2"]
 visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Mail/ScrollContainer" index="0"]
@@ -228,7 +228,7 @@ autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 3
 
-[node name="Title" type="Label" parent="Mail"]
+[node name="Title2" type="Label" parent="Mail"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = -2.0
