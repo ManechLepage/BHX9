@@ -17,19 +17,19 @@ expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(0, 0, 32, 32)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm0tm"]
 texture = ExtResource("2_y6i65")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(0, 0, 32, 32)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcuxm"]
 texture = ExtResource("3_4kqaa")
@@ -41,7 +41,7 @@ expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(0, 0, 32, 32)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isbx3"]
 texture = ExtResource("4_3h814")
@@ -53,7 +53,7 @@ expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(0, 0, 32, 32)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tyxu"]
 texture = ExtResource("1_xrraj")
@@ -71,7 +71,7 @@ default_font = ExtResource("1_tiivk")
 default_font_size = 19
 Button/styles/disabled = SubResource("StyleBoxTexture_vmutd")
 Button/styles/focus = SubResource("StyleBoxTexture_mm0tm")
-Button/styles/hover = null
+Button/styles/hover = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/normal = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/pressed = SubResource("StyleBoxTexture_isbx3")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_1tyxu")
