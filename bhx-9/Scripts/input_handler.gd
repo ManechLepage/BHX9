@@ -66,3 +66,17 @@ func investigate_email(mail: Mail) -> void:
 	await tween.finished
 	mail_ui.visible = false
 	mail_ui.scale = Vector2.ONE
+
+func reset_emails() -> void:
+	for mail in $"../Mail/ScrollContainer/VBoxContainer".get_children():
+		if mail is Button:
+			if mail.disabled: mail.queue_free()
+	
+	mail_ui.visible = true
+	mail_ui.scale = Vector2.ZERO
+	var tween = create_tween()
+	tween.tween_property(mail_ui, "scale", Vector2.ONE, 0.2).set_trans(Tween.TRANS_LINEAR)
+	investigation.answers.clear()
+	investigation.email = null
+	investigation.button.disabled = false
+	investigation.body.text = ""

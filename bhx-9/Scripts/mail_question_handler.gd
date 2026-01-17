@@ -17,6 +17,7 @@ var email: Email
 @onready var header: Label = $ScrollContainer/Top/Header
 @onready var body: RichTextLabel = $ScrollContainer/Top/body
 @onready var win_window: WindowUI = $"../WinWindow"
+@onready var button: Button = $ScrollContainer/Top/Button
 
 func load_email() -> void:
 	texture_rect.texture = email.profile_picture
