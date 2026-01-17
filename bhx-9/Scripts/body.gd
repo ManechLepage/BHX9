@@ -4,6 +4,7 @@ extends RichTextLabel
 @onready var ljn: WindowUI = $"../../../../Bicyclettes/LJN"
 @onready var input_handler: InputHandler = $"../../../../InputHandler"
 @onready var quacker_bicycle: WindowUI = $"../../../../Bicyclettes/QuackerBicycle"
+@onready var news: WindowUI = $"../../../../Bicyclettes/News"
 
 
 func _ready() -> void:
@@ -17,7 +18,7 @@ func article_cycliste() -> void:
 	show_window(ljn)
 
 func news_cycliste() -> void:
-	pass
+	show_window(news)
 
 func update(_value:Variant) -> void:
 	var value = str(_value)
