@@ -1,14 +1,14 @@
 class_name InputHandler
 extends Node
 
-var selected_window: Control
+var selected_window: WindowUI
 var input_state: InputState
 
 @onready var main: Node2D = $".."
 
-@onready var twitter: PanelContainer = %Twitter
-@onready var youtube: PanelContainer = %Youtube
-@onready var news: PanelContainer = %News
+@onready var twitter: WindowUI = %Twitter
+@onready var youtube: WindowUI = %Youtube
+@onready var news: WindowUI = %News
 
 enum InputState {
 	NONE,
@@ -35,7 +35,7 @@ func handle_left_hold() -> void:
 func handle_left_release() -> void:
 	pass
 
-func select_window(window: Control) -> void:
+func select_window(window: WindowUI) -> void:
 	selected_window = window
 	input_state = InputState.SELECTING
 
