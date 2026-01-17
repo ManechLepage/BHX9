@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq1okjish7foe"]
+[gd_scene load_steps=11 format=3 uid="uid://dq1okjish7foe"]
 
 [ext_resource type="Script" uid="uid://depx3ll5j0xt0" path="res://Scripts/input_handler.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c0g3bp6kj72m" path="res://Scenes/Windows/window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://b4o5gddbiyutw" path="res://Scenes/end_search_button.tscn" id="5_344ge"]
 [ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scripts/tv_panel.gd" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 [ext_resource type="FontFile" uid="uid://cwasmt1ldfcrh" path="res://Visual/upheavtt.ttf" id="9_ynf5e"]
@@ -39,24 +38,6 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8gbba")
-
-[node name="EndSearchButton" parent="." instance=ExtResource("5_344ge")]
-z_index = 100
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = 1134.0
-offset_top = 1001.0
-offset_right = 1420.0
-offset_bottom = 1045.0
-grow_vertical = 1
-theme_override_colors/font_color = Color(0.8378318, 0, 0.16214153, 1)
-theme_override_colors/font_focus_color = Color(0.74184906, 0.55411893, 0.16491571, 1)
-theme_override_colors/font_pressed_color = Color(0.36417884, 0.5292624, 0.25956586, 1)
-theme_override_colors/font_hover_color = Color(0.7631907, 0.4603728, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "End research"
 
 [node name="Twitter" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
@@ -216,7 +197,6 @@ text = "MAIL"
 [connection signal="selected" from="News" to="InputHandler" method="select_window"]
 [connection signal="unselect" from="News" to="InputHandler" method="unselect_window"]
 
-[editable path="EndSearchButton"]
 [editable path="Twitter"]
 [editable path="Article"]
 [editable path="News"]
