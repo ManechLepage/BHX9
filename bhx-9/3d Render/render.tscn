@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bqbeud1bkmmpw"]
+[gd_scene load_steps=40 format=4 uid="uid://bqbeud1bkmmpw"]
 
 [ext_resource type="Texture2D" uid="uid://dqks581gx4bvy" path="res://3d Render/Model/PC_COMPLEMENTOS_baseColor.jpg" id="1_gjmww"]
 [ext_resource type="Shader" uid="uid://b64p3amnpkfmk" path="res://3d Render/shaders/CRT.gdshader" id="2_435c0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://plu6i0kkges2" path="res://3d Render/Model/PC_PRINCIPAL_metallicRoughness.png" id="5_4i6ln"]
 [ext_resource type="Texture2D" uid="uid://ik7wwm8ba0xo" path="res://3d Render/Model/PC_PRINCIPAL_normal.png" id="6_fkegs"]
 [ext_resource type="Texture2D" uid="uid://hc2hhxdqvcfl" path="res://3d Render/Model/PC_PRINCIPAL_baseColor..png" id="7_atw34"]
+[ext_resource type="Shader" uid="uid://cfcv37avc8h5u" path="res://3d Render/Post1.gdshader" id="10_435c0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gjmww"]
 viewport_path = NodePath("Base/TextureRect/3D")
@@ -35,10 +36,15 @@ ambient_light_color = Color(0.2627451, 0.2627451, 0.5372549, 1)
 ambient_light_energy = 0.26
 reflected_light_source = 1
 tonemap_mode = 2
+ssao_radius = 3.07
+ssao_intensity = 16.0
+ssao_detail = 0.54
+ssao_sharpness = 1.0
 glow_enabled = true
 glow_normalized = true
-glow_strength = 1.73
-glow_bloom = 0.5
+glow_intensity = 2.66
+glow_strength = 1.12
+glow_bloom = 1.0
 adjustment_enabled = true
 adjustment_contrast = 1.41
 
@@ -314,7 +320,7 @@ emission_texture = SubResource("ViewportTexture_mslbk")
 shader = ExtResource("2_435c0")
 shader_parameter/overlay = false
 shader_parameter/resolution = Vector2(360, 270)
-shader_parameter/brightness = 1.4
+shader_parameter/brightness = 1.0
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
 shader_parameter/grille_opacity = 0.14000000665
@@ -323,7 +329,7 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/roll_size = 3.6810001748475
 shader_parameter/roll_variation = 1.21000005421512
 shader_parameter/distort_intensity = 0.010000000475
-shader_parameter/aberration = 0.006000047784999962
+shader_parameter/aberration = 0.00600004778499996
 shader_parameter/noise_opacity = 0.1200000057
 shader_parameter/noise_speed = 5.0
 shader_parameter/static_noise_intensity = 0.0570000027075
@@ -333,6 +339,11 @@ shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.375
 shader_parameter/vignette_opacity = 0.3190000151525
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4i6ln"]
+shader = ExtResource("10_435c0")
+shader_parameter/intensity = 1.0
+shader_parameter/threshold = 1.0
 
 [node name="Render" type="Node2D"]
 
@@ -350,11 +361,10 @@ size = Vector2i(1920, 1080)
 [node name="PC" type="Node3D" parent="Base/TextureRect/3D"]
 
 [node name="Camera3D" type="Camera3D" parent="Base/TextureRect/3D/PC"]
-transform = Transform3D(-4.131399e-08, -0.3266241, 0.9451543, -1.4277185e-08, 0.9451543, 0.3266241, -1, 1.7763568e-15, -4.3711367e-08, 1.1369742, 0.6576814, 0.010313258)
+transform = Transform3D(-4.2863267e-08, -0.19603172, 0.98059756, -8.568814e-09, 0.98059756, 0.19603172, -1, 1.7763568e-15, -4.3711374e-08, 1.1203663, 0.4967842, 0.010313258)
 environment = SubResource("Environment_mslbk")
-projection = 1
 current = true
-fov = 41.8
+fov = 22.2
 size = 0.325
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Base/TextureRect/3D/PC"]
@@ -446,3 +456,12 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Post1" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Post1"]
+material = SubResource("ShaderMaterial_4i6ln")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

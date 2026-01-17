@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfiauc7i47la" path="res://Visual/windows-98-yaa4sbkls0sleaqm.jpg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dnndm2pk4pm3f" path="res://Scenes/timer.tscn" id="3_21xkr"]
 [ext_resource type="PackedScene" uid="uid://c5gp6vy3q1ngj" path="res://Scenes/Windows/twitter/twitter_post.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://b4o5gddbiyutw" path="res://Scenes/end_search_button.tscn" id="5_344ge"]
+[ext_resource type="PackedScene" path="res://Scenes/end_search_button.tscn" id="5_344ge"]
 [ext_resource type="Script" uid="uid://f35wqtlgobxx" path="res://Scripts/tv_panel.gd" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://cd4yapelfxwvc" path="res://Visual/sprites/mouse.png" id="7_6bp64"]
 
@@ -160,6 +160,20 @@ Outre l’apparence visuelle, la fluidité des transitions et des interactions c
 
 Finalement, la réussite d’une interface repose sur un équilibre entre forme et fonction. Une interface exclusivement pratique risque de paraître trop froide ou technique, tandis qu’une interface trop visuelle peut se révéler inefficace. Les créateurs doivent donc comprendre les besoins réels des utilisateurs, anticiper leurs comportements et itérer constamment. Car une interface réussie n’est jamais figée : elle évolue avec le temps, s’adapte aux usages, aux technologies et aux exigences du public."
 autowrap_mode = 2
+
+[node name="Mail" parent="." instance=ExtResource("1_jjgbg")]
+offset_top = 178.0
+offset_right = 51.0
+offset_bottom = 270.0
+
+[node name="Name" type="Label" parent="Mail"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 114.0
+offset_bottom = 17.0
+scale = Vector2(0.5, 0.5)
+text = "MAIL"
 
 [connection signal="click" from="Twitter" to="InputHandler" method="_on_twitter_click"]
 [connection signal="focus_entered" from="Twitter" to="InputHandler" method="_on_twitter_focus_entered"]
