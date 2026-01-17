@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c0g3bp6kj72m"]
+
+[node name="Window" type="PanelContainer"]
+offset_right = 219.0
+offset_bottom = 153.0
+
+[node name="TopBar" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 13.005)
+layout_mode = 2
+size_flags_vertical = 0
