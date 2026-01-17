@@ -126,7 +126,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
-offset_top = -18.0
+offset_top = -46.0
 offset_right = -3.0
 offset_bottom = -3.0
 grow_horizontal = 2
@@ -139,6 +139,7 @@ offset_left = 2.0
 offset_top = -2.0
 offset_right = 290.0
 offset_bottom = 20.0
+theme_override_font_sizes/font_size = 40
 text = "Info asdk ask posla ads"
 
 [node name="Label2" type="Label" parent="News/Panel/Label"]
@@ -148,13 +149,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 46.0
-offset_top = -11.0
-offset_right = 334.0
-offset_bottom = 11.0
+offset_left = 70.0
+offset_top = -18.0
+offset_right = 646.0
+offset_bottom = 18.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Info tele tres importante "
+theme_override_font_sizes/font_size = 40
+text = "Info asdk ask posla ads"
 
 [node name="Mail" parent="." instance=ExtResource("1_jjgbg")]
 offset_left = 1.0
