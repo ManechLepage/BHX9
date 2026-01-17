@@ -81,7 +81,9 @@ func _on_send_pressed() -> void:
 	await get_tree().create_timer(0.4).timeout
 	
 	var text = "Score: " + str(counter) + "/3"
-	
+	win_window.get_node("PanelContainer/VBoxContainer/Happy").visible = counter >= 2
+	win_window.get_node("PanelContainer/VBoxContainer/Sad").visible = counter < 2
+		
 	win_window.change_score(text)
 	win_window.visible = true
 	win_window.scale = Vector2.ZERO
