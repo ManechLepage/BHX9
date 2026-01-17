@@ -642,6 +642,30 @@ flat = true
 
 [node name="Investigation" parent="." instance=ExtResource("7_344ge")]
 
+[node name="TextureRect" parent="Investigation/ScrollContainer/Top/Panel" index="0"]
+texture = null
+
+[node name="Name" parent="Investigation/ScrollContainer/Top" index="1"]
+text = ""
+
+[node name="email" parent="Investigation/ScrollContainer/Top" index="2"]
+text = ""
+
+[node name="date" parent="Investigation/ScrollContainer/Top" index="3"]
+text = ""
+
+[node name="Header" parent="Investigation/ScrollContainer/Top" index="5"]
+text = ""
+
+[node name="Button" parent="Investigation/ScrollContainer/Top" index="6"]
+offset_left = 696.0
+theme_override_colors/font_color = Color(0.20871001, 0.20871016, 0.20871013, 1)
+text = "Répondre"
+
+[node name="Send" parent="Investigation/ScrollContainer/Bottom" index="1"]
+theme_override_colors/font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+text = "Envoyer"
+
 [node name="WinWindow" parent="." instance=ExtResource("20_hibaj")]
 visible = false
 z_index = 25
