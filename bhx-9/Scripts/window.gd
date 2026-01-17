@@ -2,10 +2,10 @@ class_name WindowUI
 extends NinePatchRect
 
 signal selected(window: WindowUI)
+signal unselect()
 
-func _on_button_pressed() -> void:
+func _on_button_button_down() -> void:
 	selected.emit(self)
 
-
-func select_window(window: WindowUI) -> void:
-	pass # Replace with function body.
+func _on_button_button_up() -> void:
+	unselect.emit()
