@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c808srk8rneen"]
+
+[ext_resource type="Texture2D" uid="uid://bgdf3383wghm6" path="res://Visual/sprites/trump/frame0000.png" id="1_ru458"]
+[ext_resource type="Texture2D" uid="uid://xfemu1l2ijba" path="res://Visual/sprites/trump/frame0001.png" id="2_sptel"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ru458")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sptel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
