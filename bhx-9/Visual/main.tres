@@ -57,21 +57,22 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tyxu"]
 texture = ExtResource("1_xrraj")
-texture_margin_left = 10.161709
-texture_margin_top = 5.0
-texture_margin_right = 10.0
+texture_margin_left = 10.0
+texture_margin_top = 8.0
+texture_margin_right = 13.0
 texture_margin_bottom = 3.0
 expand_margin_left = 2.0
 expand_margin_top = 5.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 32, 32)
 
 [resource]
 default_font = ExtResource("1_tiivk")
 default_font_size = 19
 Button/styles/disabled = SubResource("StyleBoxTexture_vmutd")
 Button/styles/focus = SubResource("StyleBoxTexture_mm0tm")
-Button/styles/hover = null
+Button/styles/hover = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/normal = SubResource("StyleBoxTexture_rcuxm")
 Button/styles/pressed = SubResource("StyleBoxTexture_isbx3")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_1tyxu")
