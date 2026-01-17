@@ -319,7 +319,7 @@ flat = true
 
 [node name="Investigation" parent="." instance=ExtResource("7_344ge")]
 
-[node name="Window" parent="." instance=ExtResource("20_hibaj")]
+[node name="WinWindow" parent="." instance=ExtResource("20_hibaj")]
 visible = false
 offset_left = 391.0
 offset_top = 342.0
