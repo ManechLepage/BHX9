@@ -1,5 +1,12 @@
 [gd_scene format=3 uid="uid://c0g3bp6kj72m"]
 
-[node name="Window" type="PanelContainer"]
+[node name="Window" type="NinePatchRect"]
 offset_right = 219.0
 offset_bottom = 153.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
