@@ -17,6 +17,7 @@ func next_step() -> void:
 		var next_char = goal_text[next_char_index]
 		if next_char == "/":
 			anim = false
+			goal_text.remove_char(goal_text.find("/"))
 		else:
 			var text: String = ""
 			for i in range(next_char_index - 1):
