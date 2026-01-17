@@ -70,9 +70,11 @@ func _on_send_pressed() -> void:
 	animate_down()
 	await get_tree().create_timer(0.4).timeout
 	
+	var text = "Score: " + str(counter) + "/3"
+	
+	win_window.change_score(text)
 	win_window.visible = true
 	win_window.scale = Vector2.ZERO
 	
 	var tween2 = create_tween()
-	tween2.tween_property(win_window, "scale", 1.0, 0.3).set_trans(Tween.TRANS_BOUNCE)
-	
+	tween2.tween_property(win_window, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BOUNCE)

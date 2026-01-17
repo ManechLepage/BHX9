@@ -19,4 +19,4 @@ func _on_button_2_button_down() -> void:
 	click.emit()
 
 func change_score(value: String) -> void:
-	pass
+	get_node("PanelContainer/VBoxContainer/MainLabel").text = value

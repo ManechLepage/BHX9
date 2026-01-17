@@ -93,7 +93,7 @@ layout_mode = 2
 texture = ExtResource("4_sgb2n")
 stretch_mode = 3
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="MainLabel" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
