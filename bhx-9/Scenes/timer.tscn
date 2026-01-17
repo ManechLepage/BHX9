@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnndm2pk4pm3f"]
+
+[ext_resource type="Script" uid="uid://cn2bd4ey6hd33" path="res://Scripts/timer.gd" id="1_pvhx5"]
+
+[node name="Timer" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1874.0
+offset_bottom = -1064.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 0
+script = ExtResource("1_pvhx5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 44.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+text = "0:00"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
